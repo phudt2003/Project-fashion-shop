@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCart } from '../../cart/cartSlice';
-import { ProductDetailPage as StitchProductDetailPage } from './StitchProductDetailPage';
+import { ProductDetailPage as PremiumProductDetailPage } from './PremiumProductDetailPage';
 
-const STITCH_PRODUCT_SLUGS = new Set([
+const PREMIUM_PRODUCT_SLUGS = new Set([
   'vay-hoa-nhi-organic',
   'yem-linen-sage',
   'set-chan-vay-dusty-rose',
@@ -106,8 +106,8 @@ const RECOMMENDATIONS = [
 export function ProductDetailPage() {
   const { slug } = useParams();
 
-  if (STITCH_PRODUCT_SLUGS.has(slug)) {
-    return <StitchProductDetailPage />;
+  if (PREMIUM_PRODUCT_SLUGS.has(slug)) {
+    return <PremiumProductDetailPage />;
   }
 
   return <LegacyProductDetailPage />;
