@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCart } from '../../cart/cartSlice';
-import { ProductDetailPage as StitchProductDetailPage } from './ProductDetailPageStitch';
+import { ProductDetailPage as StitchProductDetailPage } from './StitchProductDetailPage';
 
 const STITCH_PRODUCT_SLUGS = new Set([
   'vay-hoa-nhi-organic',
