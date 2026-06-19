@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 export function Header() {
   const cartItems = useSelector((state) => state.cart?.items || []);
   const cartCount = cartItems.reduce((acc, item) => acc + (item.quantity || 1), 0);
+  const { pathname, search } = useLocation();
+  const currentPath = pathname + search;
 
   // Navbar interaction on scroll
   useEffect(() => {
@@ -25,6 +27,19 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const getLinkClass = (targetPath) => {
+    // Exact match for paths with query params, prefix match for normal category/order paths
+    const isActive = targetPath.includes('?') 
+      ? currentPath.startsWith(targetPath)
+      : pathname.startsWith(targetPath);
+
+    return `font-label-uppercase text-label-uppercase transition-colors duration-300 ${
+      isActive 
+        ? 'text-primary font-bold' 
+        : 'text-on-surface-variant hover:text-primary'
+    }`;
+  };
+
   return (
     <header className="fixed top-0 w-full z-50 glass-nav shadow-sm transition-all duration-300 py-4">
       <nav className="flex justify-between items-center px-grid-gutter max-w-container-max mx-auto w-full grid grid-cols-3">
@@ -37,32 +52,32 @@ export function Header() {
         <div className="hidden md:flex items-center justify-center gap-element-gap-lg">
           <Link
             to="/categories/do-be-trai"
-            className="font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-primary transition-colors duration-300"
+            className={getLinkClass('/categories/do-be-trai')}
           >
             Bé trai
           </Link>
           <Link
             to="/categories/do-be-gai"
-            className="font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-primary transition-colors duration-300"
+            className={getLinkClass('/categories/do-be-gai')}
           >
             Bé gái
           </Link>
 
           <Link 
             to="/categories/footwear" 
-            className="font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-primary transition-colors duration-300"
+            className={getLinkClass('/categories/footwear')}
           >
             Giày dép
           </Link>
           <Link 
             to="/products?sale=true" 
-            className="font-label-uppercase text-label-uppercase text-primary hover:text-clay-dark transition-colors duration-300"
+            className={getLinkClass('/products?sale=true')}
           >
             Khuyến mãi
           </Link>
           <Link 
             to="/orders" 
-            className="font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-primary transition-colors duration-300"
+            className={getLinkClass('/orders')}
           >
             Đơn hàng
           </Link>
