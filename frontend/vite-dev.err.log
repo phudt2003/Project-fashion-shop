@@ -1,0 +1,110 @@
+[2m00:35:36[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\fashion-shop\frontend\src\features\products\pages\ProductDetailPageStitch.jsx: Identifier 'useEffect' has already been declared. (8:9)
+
+[0m [90m  6 |[31m [36mconst[31m [33mSTITCH_ASSET_PATH[31m [33m=[31m [32m'/stitch/product-girl'[31m[33m;[31m
+ [90m  7 |[31m
+[31m[1m>[22m[31m[90m  8 |[31m [36mimport[31m { useEffect[33m,[31m useState } [36mfrom[31m [32m'react'[31m[33m;[31m
+ [90m    |[31m          [31m[1m^[22m[31m
+ [90m  9 |[31m [36mimport[31m { [33mLink[31m[33m,[31m useParams } [36mfrom[31m [32m'react-router-dom'[31m[33m;[31m
+ [90m 10 |[31m [36mimport[31m { useDispatch[33m,[31m useSelector } [36mfrom[31m [32m'react-redux'[31m[33m;[31m
+ [90m 11 |[31m [36mimport[31m { setCart } [36mfrom[31m [32m'../../cart/cartSlice'[31m[33m;[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/fashion-shop/frontend/src/features/products/pages/ProductDetailPageStitch.jsx[39m:8:9
+[33m  6  |  const STITCH_ASSET_PATH = '/stitch/product-girl';
+  7  |  
+  8  |  import { useEffect, useState } from 'react';
+     |           ^
+  9  |  import { Link, useParams } from 'react-router-dom';
+  10 |  import { useDispatch, useSelector } from 'react-redux';[39m
+      at constructor (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:365:19)
+      at JSXParserMixin.raise (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:6616:19)
+      at ScopeHandler.checkRedeclarationInScope (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:1619:19)
+      at ScopeHandler.declareName (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:1585:12)
+      at JSXParserMixin.declareNameFromIdentifier (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:7584:16)
+      at JSXParserMixin.checkIdentifier (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:7580:12)
+      at JSXParserMixin.checkLVal (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:7517:12)
+      at JSXParserMixin.finishImportSpecifier (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:14283:10)
+      at JSXParserMixin.parseImportSpecifier (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:14436:17)
+      at JSXParserMixin.parseNamedImportSpecifiers (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:14415:36)
+      at JSXParserMixin.parseImportSpecifiersAndAfter (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:14259:37)
+      at JSXParserMixin.parseImport (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:14252:17)
+      at JSXParserMixin.parseStatementContent (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:12893:27)
+      at JSXParserMixin.parseStatementLike (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:12784:17)
+      at JSXParserMixin.parseModuleItem (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:12761:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:13333:36)
+      at JSXParserMixin.parseBlockBody (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:13326:10)
+      at JSXParserMixin.parseProgram (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:12639:10)
+      at JSXParserMixin.parseTopLevel (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:12629:25)
+      at JSXParserMixin.parse (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:14505:25)
+      at parse (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:14539:38)
+      at parser (C:\fashion-shop\frontend\node_modules\@babel\core\lib\parser\index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (C:\fashion-shop\frontend\node_modules\@babel\core\lib\transformation\normalize-file.js:51:37)
+      at normalizeFile.next (<anonymous>)
+      at run (C:\fashion-shop\frontend\node_modules\@babel\core\lib\transformation\index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (C:\fashion-shop\frontend\node_modules\@babel\core\lib\transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (C:\fashion-shop\frontend\node_modules\gensync\index.js:261:32)
+      at C:\fashion-shop\frontend\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (C:\fashion-shop\frontend\node_modules\gensync\index.js:223:11)
+      at C:\fashion-shop\frontend\node_modules\gensync\index.js:189:28
+      at C:\fashion-shop\frontend\node_modules\@babel\core\lib\gensync-utils\async.js:67:7
+      at C:\fashion-shop\frontend\node_modules\gensync\index.js:113:33
+      at step (C:\fashion-shop\frontend\node_modules\gensync\index.js:287:14)
+      at C:\fashion-shop\frontend\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (C:\fashion-shop\frontend\node_modules\gensync\index.js:223:11)
+[2m00:35:36[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\fashion-shop\frontend\src\features\products\pages\ProductDetailPageStitch.jsx: Identifier 'useEffect' has already been declared. (8:9)
+
+[0m [90m  6 |[31m [36mconst[31m [33mSTITCH_ASSET_PATH[31m [33m=[31m [32m'/stitch/product-girl'[31m[33m;[31m
+ [90m  7 |[31m
+[31m[1m>[22m[31m[90m  8 |[31m [36mimport[31m { useEffect[33m,[31m useState } [36mfrom[31m [32m'react'[31m[33m;[31m
+ [90m    |[31m          [31m[1m^[22m[31m
+ [90m  9 |[31m [36mimport[31m { [33mLink[31m[33m,[31m useParams } [36mfrom[31m [32m'react-router-dom'[31m[33m;[31m
+ [90m 10 |[31m [36mimport[31m { useDispatch[33m,[31m useSelector } [36mfrom[31m [32m'react-redux'[31m[33m;[31m
+ [90m 11 |[31m [36mimport[31m { setCart } [36mfrom[31m [32m'../../cart/cartSlice'[31m[33m;[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/fashion-shop/frontend/src/features/products/pages/ProductDetailPageStitch.jsx[39m:8:9
+[33m  6  |  const STITCH_ASSET_PATH = '/stitch/product-girl';
+  7  |  
+  8  |  import { useEffect, useState } from 'react';
+     |           ^
+  9  |  import { Link, useParams } from 'react-router-dom';
+  10 |  import { useDispatch, useSelector } from 'react-redux';[39m
+      at constructor (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:365:19)
+      at JSXParserMixin.raise (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:6616:19)
+      at ScopeHandler.checkRedeclarationInScope (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:1619:19)
+      at ScopeHandler.declareName (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:1585:12)
+      at JSXParserMixin.declareNameFromIdentifier (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:7584:16)
+      at JSXParserMixin.checkIdentifier (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:7580:12)
+      at JSXParserMixin.checkLVal (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:7517:12)
+      at JSXParserMixin.finishImportSpecifier (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:14283:10)
+      at JSXParserMixin.parseImportSpecifier (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:14436:17)
+      at JSXParserMixin.parseNamedImportSpecifiers (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:14415:36)
+      at JSXParserMixin.parseImportSpecifiersAndAfter (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:14259:37)
+      at JSXParserMixin.parseImport (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:14252:17)
+      at JSXParserMixin.parseStatementContent (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:12893:27)
+      at JSXParserMixin.parseStatementLike (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:12784:17)
+      at JSXParserMixin.parseModuleItem (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:12761:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:13333:36)
+      at JSXParserMixin.parseBlockBody (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:13326:10)
+      at JSXParserMixin.parseProgram (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:12639:10)
+      at JSXParserMixin.parseTopLevel (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:12629:25)
+      at JSXParserMixin.parse (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:14505:25)
+      at parse (C:\fashion-shop\frontend\node_modules\@babel\parser\lib\index.js:14539:38)
+      at parser (C:\fashion-shop\frontend\node_modules\@babel\core\lib\parser\index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (C:\fashion-shop\frontend\node_modules\@babel\core\lib\transformation\normalize-file.js:51:37)
+      at normalizeFile.next (<anonymous>)
+      at run (C:\fashion-shop\frontend\node_modules\@babel\core\lib\transformation\index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (C:\fashion-shop\frontend\node_modules\@babel\core\lib\transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (C:\fashion-shop\frontend\node_modules\gensync\index.js:261:32)
+      at C:\fashion-shop\frontend\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (C:\fashion-shop\frontend\node_modules\gensync\index.js:223:11)
+      at C:\fashion-shop\frontend\node_modules\gensync\index.js:189:28
+      at C:\fashion-shop\frontend\node_modules\@babel\core\lib\gensync-utils\async.js:67:7
+      at C:\fashion-shop\frontend\node_modules\gensync\index.js:113:33
+      at step (C:\fashion-shop\frontend\node_modules\gensync\index.js:287:14)
+      at C:\fashion-shop\frontend\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (C:\fashion-shop\frontend\node_modules\gensync\index.js:223:11)

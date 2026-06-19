@@ -1,0 +1,18 @@
+
+> fashion-shop-frontend@1.0.0 dev
+> vite --host 127.0.0.1
+
+Port 5173 is in use, trying another one...
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m325[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m5174[22m/[39m
+[2m00:23:21[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/features/products/pages/ProductDetailPage.jsx, /src/index.css[22m
+[2m00:35:36[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/features/products/pages/ProductDetailPageStitch.jsx, /src/index.css[22m
+[2m00:35:40[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/features/products/pages/ProductDetailPageStitch.jsx, /src/index.css[22m
+[2m00:35:48[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/features/products/pages/[2m00:35:48[22m [36m[1m[vite][22m[39m [32m[2m00:35:54[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/features/products/pages/ProductDetailPage.jsx, /src/index.css[22m
+[2m00:36:00[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/features/categories/pages/CategoryPage.jsx, /src/index.css[22m
+[2m00:41:57[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/HomePage.jsx, /src[2m00:41:57[22[2m00:43:08[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/layouts/CustomerLayout.jsx, /src/index.css[22m
+[2m00:44:24[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mindex.html[22m
+ex.css[22m
+[2m00:44:24[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mindex.html[22m
