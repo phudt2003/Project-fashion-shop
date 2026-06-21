@@ -1,6 +1,13 @@
 import axios from 'axios';
 import { env } from '../config/env';
-import { tokenStorage } from './tokenStorage';
+import { useAuth } from '../hooks/useAuth';
+
+// Get Clerk session token
+let getTokenFn = null;
+
+export const setTokenGetter = (fn) => {
+  getTokenFn = fn;
+};
 
 export const axiosClient = axios.create({
   baseURL: env.apiBaseUrl,
@@ -10,10 +17,16 @@ export const axiosClient = axios.create({
   },
 });
 
-axiosClient.interceptors.request.use((config) => {
-  const token = tokenStorage.getAccessToken();
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
+axiosClient.interceptors.request.use(async (config) => {
+  if (getTokenFn) {
+    try {
+      const token = await getTokenFn();
+      if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+      }
+    } catch (error) {
+      console.error('Error getting Clerk token:', error);
+    }
   }
   return config;
 });
@@ -25,14 +38,9 @@ axiosClient.interceptors.response.use(
 
     if (error.response?.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
-      const refreshToken = tokenStorage.getRefreshToken();
-
-      if (refreshToken) {
-        const data = await axios.post(`${env.apiBaseUrl}/auth/refresh-token`, { refreshToken });
-        tokenStorage.setTokens(data.data);
-        originalRequest.headers.Authorization = `Bearer ${data.data.accessToken}`;
-        return axiosClient(originalRequest);
-      }
+      // Clerk handles token refresh automatically
+      // Just reject and let the user re-authenticate if needed
+      return Promise.reject(error.response?.data || error);
     }
 
     return Promise.reject(error.response?.data || error);
