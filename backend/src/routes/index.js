@@ -12,6 +12,7 @@ import { productRoutes } from '../modules/products/product.routes.js';
 import { reviewRoutes } from '../modules/reviews/review.routes.js';
 import { userRoutes } from '../modules/users/user.routes.js';
 import { wishlistRoutes } from '../modules/wishlists/wishlist.routes.js';
+import { clerkWebhookRoutes } from '../modules/users/clerkWebhook.routes.js';
 import { adminRoutes } from './admin.routes.js';
 
 export const router = Router();
@@ -29,5 +30,6 @@ router.use('/coupons', couponRoutes);
 router.use('/payments', paymentRoutes);
 router.use('/analytics', analyticsRoutes);
 router.use('/webhooks', webhookRoutes);
+router.use('/webhooks', clerkWebhookRoutes);
 router.use('/admin', adminRoutes);
 

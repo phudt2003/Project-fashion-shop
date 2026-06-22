@@ -4,9 +4,17 @@ import { ROLES } from '../../constants/roles.js';
 
 const userSchema = new mongoose.Schema(
   {
+    clerkId: {
+      type: String,
+      unique: true,
+      sparse: true,
+      index: true,
+    },
     name: {
       type: String,
-      required: true,
+      required: function() {
+        return !this.clerkId;
+      },
       trim: true,
     },
     email: {
@@ -18,12 +26,16 @@ const userSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      required: true,
+      required: function() {
+        return !this.clerkId;
+      },
       minlength: 8,
       select: false,
     },
     phone: String,
     avatar: String,
+    firstName: String,
+    lastName: String,
     role: {
       type: String,
       enum: Object.values(ROLES),
