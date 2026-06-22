@@ -9,6 +9,8 @@
     "test": "node --test"
   },
   "dependencies": {
+    "@clerk/backend": "^3.8.2",
+    "@clerk/express": "^2.1.30",
     "axios": "^1.7.7",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^2.4.0",
@@ -30,4 +32,3 @@
     "nodemon": "^3.1.4"
   }
 }
-
