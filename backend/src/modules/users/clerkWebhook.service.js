@@ -1,4 +1,4 @@
-import { createClerkClient } from '@clerk/backend';
+import { Webhook } from 'svix';
 import { env } from '../../config/env.js';
 import { User } from './user.model.js';
 import { ROLES } from '../../constants/roles.js';
@@ -11,7 +11,7 @@ export const clerkWebhookService = {
   /**
    * Process Clerk webhook events
    */
-  async processWebhook(payload, headers) {
+  async processWebhook(rawBody, headers) {
     const svixId = headers['svix-id'];
     const svixTimestamp = headers['svix-timestamp'];
     const svixSignature = headers['svix-signature'];
@@ -20,13 +20,26 @@ export const clerkWebhookService = {
       throw new Error('Missing Svix headers');
     }
 
-    // Verify webhook signature using Clerk's webhook utility
-    const clerk = createClerkClient({ secretKey: env.clerkSecretKey });
-    const evt = clerk.webhooks.verify(payload, {
-      'svix-id': svixId,
-      'svix-timestamp': svixTimestamp,
-      'svix-signature': svixSignature,
-    }, env.clerkWebhookSecret);
+    if (!env.clerkWebhookSecret) {
+      throw new Error('CLERK_WEBHOOK_SECRET is not configured');
+    }
+
+    // Verify webhook signature using Svix
+    const wh = new Webhook(env.clerkWebhookSecret);
+
+    let evt;
+    try {
+      // rawBody is a Buffer when using express.raw()
+      const bodyString = typeof rawBody === 'string' ? rawBody : rawBody.toString('utf8');
+      evt = wh.verify(bodyString, {
+        'svix-id': svixId,
+        'svix-timestamp': svixTimestamp,
+        'svix-signature': svixSignature,
+      });
+    } catch (err) {
+      console.error('❌ Webhook signature verification failed:', err.message);
+      throw new Error('Invalid webhook signature');
+    }
 
     const eventType = evt.type;
     const data = evt.data;
@@ -78,14 +91,14 @@ export const clerkWebhookService = {
     }
 
     // Create new user
-    const user = await User.create({
+    await User.create({
       clerkId: id,
       email,
       firstName: first_name,
       lastName: last_name,
       name: `${first_name || ''} ${last_name || ''}`.trim() || email.split('@')[0],
       avatar: image_url,
-      role: public_metadata?.role || ROLES.CUSTOMER,
+      role: public_metadata?.role || ROLES.USER,
       isActive: true,
     });
 
@@ -130,8 +143,7 @@ export const clerkWebhookService = {
       return;
     }
 
-    // Soft delete or hard delete based on your preference
-    // Here we'll soft delete by setting isActive to false
+    // Soft delete by setting isActive to false
     user.isActive = false;
     await user.save();
 

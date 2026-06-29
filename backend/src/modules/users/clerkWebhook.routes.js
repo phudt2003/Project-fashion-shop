@@ -3,4 +3,4 @@ import { clerkWebhookController } from './clerkWebhook.controller.js';
 
 export const clerkWebhookRoutes = Router();
 
-clerkWebhookRoutes.post('/clerk', clerkWebhookController.handleClerkWebhook);
+clerkWebhookRoutes.post('/', clerkWebhookController.handleClerkWebhook);

@@ -7,6 +7,7 @@ import { corsOptions } from './config/cors.js';
 import { apiLimiter } from './middlewares/rateLimit.middleware.js';
 import { errorHandler, notFoundHandler } from './middlewares/error.middleware.js';
 import { router } from './routes/index.js';
+import { clerkWebhookRoutes } from './modules/users/clerkWebhook.routes.js';
 
 import mongoose from 'mongoose';
 
@@ -16,6 +17,15 @@ app.use(helmet());
 app.use(cors(corsOptions));
 app.use(compression());
 app.use(morgan('dev'));
+
+// ⚠️ Clerk webhook cần raw body để verify Svix signature
+// Phải mount TRƯỚC express.json()
+app.use(
+  '/api/v1/webhooks/clerk',
+  express.raw({ type: 'application/json' }),
+  clerkWebhookRoutes,
+);
+
 app.use(express.json({ limit: '2mb' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(apiLimiter);

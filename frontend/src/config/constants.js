@@ -1,6 +1,6 @@
 export const USER_ROLES = {
   ADMIN: 'admin',
-  CUSTOMER: 'customer',
+  USER: 'user',
 };
 
 export const ORDER_STATUS = {

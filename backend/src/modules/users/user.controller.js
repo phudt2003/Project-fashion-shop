@@ -1,10 +1,24 @@
 import { ApiResponse } from '../../utils/ApiResponse.js';
+import { ApiError } from '../../utils/ApiError.js';
 import { asyncHandler } from '../../utils/asyncHandler.js';
 import { userService } from './user.service.js';
+import { getAuth } from '@clerk/express';
 
 export const userController = {
   getMe: asyncHandler(async (req, res) => {
     const user = await userService.getMe(req.user._id);
+    res.json(new ApiResponse(user));
+  }),
+
+  getMeByClerkId: asyncHandler(async (req, res) => {
+    const auth = getAuth(req);
+    const clerkId = auth?.userId;
+    
+    if (!clerkId) {
+      throw new ApiError(401, 'Clerk user ID not found');
+    }
+
+    const user = await userService.findByClerkId(clerkId);
     res.json(new ApiResponse(user));
   }),
 

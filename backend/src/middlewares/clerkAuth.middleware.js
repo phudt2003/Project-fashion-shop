@@ -1,4 +1,4 @@
-import { clerkMiddleware } from '@clerk/express';
+import { clerkMiddleware, getAuth } from '@clerk/express';
 import { env } from '../config/env.js';
 
 /**
@@ -15,11 +15,13 @@ export const clerkAuthMiddleware = clerkMiddleware({
  * Ensures the user is authenticated before proceeding
  */
 export const requireAuth = (req, res, next) => {
-  if (!req.auth?.userId) {
+  const auth = getAuth(req);
+  if (!auth?.userId) {
     return res.status(401).json({
       success: false,
       message: 'Authentication required'
     });
   }
+  req.auth = auth;
   next();
 };

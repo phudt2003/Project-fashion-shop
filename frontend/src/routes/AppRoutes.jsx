@@ -43,6 +43,7 @@ import { AdminUsersPage } from '../features/admin/users/AdminUsersPage';
 import { AdminCouponsPage } from '../features/admin/coupons/AdminCouponsPage';
 import { AdminPaymentsPage } from '../features/admin/payments/AdminPaymentsPage';
 import { AdminAnalyticsPage } from '../features/admin/analytics/AdminAnalyticsPage';
+import { AdminReviewsPage } from '../features/admin/reviews/AdminReviewsPage';
 
 export function AppRoutes() {
   return (
@@ -93,6 +94,7 @@ export function AppRoutes() {
           <Route path="users" element={<AdminUsersPage />} />
           <Route path="coupons" element={<AdminCouponsPage />} />
           <Route path="payments" element={<AdminPaymentsPage />} />
+          <Route path="reviews" element={<AdminReviewsPage />} />
           <Route path="analytics" element={<AdminAnalyticsPage />} />
         </Route>
       </Route>

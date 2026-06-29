@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { env } from '../config/env';
-import { useAuth } from '../hooks/useAuth';
 
 // Get Clerk session token
 let getTokenFn = null;

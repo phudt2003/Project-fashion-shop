@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
+import { USER_ROLES } from '../config/constants';
 
 function Loading() {
   return (
@@ -14,7 +15,7 @@ function Loading() {
 }
 
 export function ProtectedRoute() {
-  const { isLoaded, isSignedIn } = useAuth();
+  const { isLoaded, isSignedIn, user } = useAuth();
 
   if (!isLoaded) {
     return <Loading />;
@@ -22,6 +23,11 @@ export function ProtectedRoute() {
 
   if (!isSignedIn) {
     return <Navigate to="/login" replace />;
+  }
+
+  // If user is admin, redirect to admin dashboard
+  if (user?.role === USER_ROLES.ADMIN) {
+    return <Navigate to="/admin" replace />;
   }
 
   return <Outlet />;
