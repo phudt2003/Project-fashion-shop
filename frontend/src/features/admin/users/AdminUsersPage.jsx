@@ -266,10 +266,10 @@ export function AdminUsersPage() {
                   <td className="px-6 py-4 text-body-sm text-on-surface-variant">{formatDate(customer.joinDate)}</td>
                   <td className="px-6 py-4">
                     <div className="flex justify-center gap-2">
-                      <button className="p-1.5 hover:bg-primary-container hover:text-on-primary-container rounded transition-colors text-on-surface-variant">
+                      <button className="p-1.5 hover:bg-primary-container hover:text-on-primary-container rounded-lg transition-colors text-on-surface-variant">
                         <span className="material-symbols-outlined text-[20px]">visibility</span>
                       </button>
-                      <button className="p-1.5 hover:bg-primary-container hover:text-on-primary-container rounded transition-colors text-on-surface-variant">
+                      <button className="p-1.5 hover:bg-primary-container hover:text-on-primary-container rounded-lg transition-colors text-on-surface-variant">
                         <span className="material-symbols-outlined text-[20px]">edit</span>
                       </button>
                     </div>
@@ -287,7 +287,7 @@ export function AdminUsersPage() {
           </p>
           <div className="flex items-center gap-1">
             <button
-              className="p-2 text-on-surface-variant hover:bg-surface-container-low rounded transition-colors disabled:opacity-30"
+              className="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-colors disabled:opacity-30"
               disabled={currentPage === 1}
               onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
             >
@@ -296,7 +296,7 @@ export function AdminUsersPage() {
             {[1, 2, 3].map(page => (
               <button
                 key={page}
-                className={`w-8 h-8 flex items-center justify-center rounded text-body-sm font-bold transition-colors ${
+                className={`w-8 h-8 flex items-center justify-center rounded-lg text-body-sm font-bold transition-colors ${
                   currentPage === page
                     ? 'bg-primary text-on-primary'
                     : 'text-on-surface-variant hover:bg-surface-container-low'
@@ -309,14 +309,14 @@ export function AdminUsersPage() {
             {totalPages > 3 && <span className="px-1 text-on-surface-variant">...</span>}
             {totalPages > 3 && (
               <button
-                className="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low rounded text-body-sm transition-colors"
+                className="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low rounded-lg text-body-sm transition-colors"
                 onClick={() => setCurrentPage(totalPages)}
               >
                 {totalPages}
               </button>
             )}
             <button
-              className="p-2 text-on-surface-variant hover:bg-surface-container-low rounded transition-colors disabled:opacity-30"
+              className="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-colors disabled:opacity-30"
               disabled={currentPage === totalPages}
               onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
             >

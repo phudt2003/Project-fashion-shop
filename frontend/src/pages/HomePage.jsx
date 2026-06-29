@@ -144,9 +144,9 @@ const formatPrice = (value) => `${new Intl.NumberFormat('vi-VN').format(value)}�
 function ProductCard({ product }) {
   return (
     <Link className="product-card group block" to={product.to}>
-      <div className="relative mb-3 aspect-[3/4] overflow-hidden rounded-lg bg-surface-container-low">
+      <div className="relative mb-4 aspect-[3/4] overflow-hidden rounded-[var(--radius-md)] bg-[var(--color-bg-muted)] shadow-card">
         {product.badge && (
-          <span className="absolute right-4 top-4 z-10 rounded-full bg-primary px-3 py-1 text-[10px] font-bold uppercase text-white">
+          <span className="absolute right-4 top-4 z-10 rounded-full bg-[var(--badge-sale-bg)] px-3 py-1 text-xs font-extrabold uppercase text-[var(--badge-sale-text)] shadow-soft">
             {product.badge}
           </span>
         )}
@@ -157,13 +157,13 @@ function ProductCard({ product }) {
           src={product.image}
         />
       </div>
-      <h3 className="text-body-md font-medium text-on-surface transition-colors group-hover:text-primary">
+      <h3 className="font-display text-title-sm text-[var(--color-text-primary)] transition-colors group-hover:text-primary">
         {product.name}
       </h3>
       <div className="mt-1 flex flex-wrap items-center gap-2">
-        <p className="text-body-md font-bold text-primary">{formatPrice(product.price)}</p>
+        <p className="font-body text-lg font-extrabold text-primary">{formatPrice(product.price)}</p>
         {product.originalPrice && (
-          <p className="text-body-md text-secondary line-through opacity-60">
+          <p className="font-body text-sm font-normal text-[var(--color-text-muted)] line-through">
             {formatPrice(product.originalPrice)}
           </p>
         )}
@@ -175,11 +175,11 @@ function ProductCard({ product }) {
 function SectionHeading({ eyebrow, title, action, to }) {
   return (
     <div className="mb-8 flex flex-col gap-3 text-center sm:mb-10 sm:items-center">
-      <p className="text-xs font-bold uppercase text-primary">{eyebrow}</p>
-      <h2 className="font-display text-3xl text-on-surface md:text-4xl">{title}</h2>
+      <p className="font-body text-sm font-extrabold uppercase text-[var(--color-text-accent)]">{eyebrow}</p>
+      <h2 className="font-display text-[var(--text-2xl)] font-extrabold text-[var(--color-text-primary)] md:text-[var(--text-3xl)]">{title}</h2>
       {action && to && (
         <Link
-          className="inline-flex items-center justify-center text-sm font-bold uppercase text-on-surface-variant transition-colors hover:text-primary"
+          className="inline-flex items-center justify-center font-body text-sm font-medium tracking-wide uppercase text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-text-primary)]"
           to={to}
         >
           {action}
@@ -213,32 +213,32 @@ export function HomePage() {
   };
 
   return (
-    <div className="w-full overflow-hidden bg-surface-bright text-on-surface">
-      <section className="relative flex min-h-[560px] items-center overflow-hidden md:min-h-[620px] lg:min-h-[680px]">
+    <div className="w-full overflow-hidden bg-[var(--color-bg-base)] text-[var(--color-text-primary)]">
+      <section className="relative flex min-h-[560px] items-center overflow-hidden rounded-b-[40px] md:min-h-[620px] lg:min-h-[680px]">
         <img
           alt="Trẻ em mặc trang phục organic của STITCH"
           className="absolute inset-0 h-full w-full object-cover"
           src={heroImage}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-black/10" />
-        <div className="relative z-10 mx-auto w-full max-w-container-max px-grid-gutter py-20 text-white">
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(37,99,235,0.52),rgba(249,168,212,0.28),rgba(253,230,138,0.12))]" />
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 md:px-6 py-20 text-[var(--color-text-inverse)]">
           <div className="max-w-3xl">
-            <p className="mb-4 text-xs font-bold uppercase">STITCH Kids Atelier</p>
-            <h1 className="font-display text-5xl leading-tight tracking-normal md:text-7xl">
+            <p className="mb-4 inline-flex rounded-full bg-white/20 px-4 py-2 font-body text-sm font-extrabold uppercase backdrop-blur">STITCH Kids Atelier</p>
+            <h1 className="font-display text-[var(--text-4xl)] font-extrabold leading-tight md:text-[var(--text-5xl)]">
               STITCH Kids Atelier
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-8 text-white/90 md:text-lg">
+            <p className="mt-6 max-w-xl font-body text-base leading-loose text-[var(--color-text-inverse)] opacity-90 md:text-lg">
               Thời trang trẻ em bền vững, mềm mại trên da bé và chỉn chu trong từng đường may cho những ngày tuổi thơ tự do.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-primary px-8 py-3 text-sm font-bold uppercase text-white transition-all hover:bg-clay-dark"
+                className="inline-flex min-h-14 items-center justify-center rounded-full bg-primary px-8 py-4 font-display text-base font-extrabold text-on-primary shadow-button transition-all hover:-translate-y-0.5 hover:bg-secondary hover:text-[var(--badge-sale-text)] active:translate-y-0"
                 to="/categories/do-be-gai"
               >
                 Khám phá bộ sưu tập
               </Link>
               <Link
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/70 px-8 py-3 text-sm font-bold uppercase text-white transition-all hover:bg-white hover:text-on-surface"
+                className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/70 bg-white/15 px-8 py-4 font-display text-base font-extrabold text-white backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white hover:text-primary"
                 to="/products?sale=true"
               >
                 Xem ưu đãi
@@ -248,14 +248,14 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="border-b border-border-subtle bg-white">
-        <div className="mx-auto flex max-w-container-max flex-col gap-5 px-grid-gutter py-7 lg:flex-row lg:items-center lg:justify-between">
+      <section className="border-b border-[var(--color-border)] bg-white/90 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-4 md:px-6 py-7 lg:flex-row lg:items-center lg:justify-between">
           <form className="relative w-full lg:max-w-md" onSubmit={handleSearch}>
-            <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-secondary">
+            <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[var(--color-text-secondary)]">
               search
             </span>
             <input
-              className="h-12 w-full rounded-full border border-border-subtle bg-white pl-12 pr-4 text-body-md outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+              className="h-14 w-full rounded-full border border-[var(--color-border)] bg-white pl-12 pr-4 font-body text-base outline-none shadow-soft transition focus:border-[var(--color-border-focus)] focus:ring-4 focus:ring-primary/20 placeholder:text-[var(--color-text-muted)]"
               onChange={(event) => setSearchTerm(event.target.value)}
               placeholder="Tìm quần áo cho bé..."
               type="search"
@@ -271,9 +271,9 @@ export function HomePage() {
               ['Khuyến mãi', '/products?sale=true'],
             ].map(([label, to], index) => (
               <Link
-                className={`whitespace-nowrap rounded-full px-5 py-2 text-xs font-bold uppercase transition ${index === 0
-                    ? 'bg-primary text-white'
-                    : 'bg-surface-container text-on-surface hover:bg-surface-container-high hover:text-primary'
+                className={`whitespace-nowrap rounded-full px-5 py-2 font-body text-sm font-medium tracking-wide uppercase transition ${index === 0
+                    ? 'bg-primary text-on-primary shadow-button'
+                    : 'bg-white text-[var(--color-text-primary)] shadow-soft hover:bg-secondary-soft hover:text-[var(--color-text-accent)]'
                   }`}
                 key={label}
                 to={to}
@@ -285,54 +285,54 @@ export function HomePage() {
         </div>
       </section>
 
-      <div className="marquee-container border-y border-border-subtle bg-sage/35 py-4">
+      <div className="marquee-container border-y border-[var(--color-border)] bg-accent/50 py-4">
         <div className="marquee-content">
           {[...serviceNotes, ...serviceNotes].map((item, index) => (
             <span
-              className="mx-6 inline-flex items-center gap-2 whitespace-nowrap text-xs font-bold uppercase text-on-surface-variant"
+              className="mx-6 inline-flex items-center gap-2 whitespace-nowrap font-body text-sm font-medium tracking-wide uppercase text-[var(--color-text-secondary)]"
               key={`${item.text}-${index}`}
             >
-              <span className="material-symbols-outlined text-[18px] text-primary">{item.icon}</span>
+              <span className="material-symbols-outlined text-[18px] text-[var(--color-text-accent)]">{item.icon}</span>
               {item.text}
             </span>
           ))}
         </div>
       </div>
 
-      <section className="mx-auto w-full max-w-container-max px-grid-gutter py-section-gap-mobile md:py-section-gap-desktop">
+      <section className="mx-auto w-full max-w-7xl px-4 md:px-6 py-12 md:py-16">
         <SectionHeading
           action="Xem tất cả sale"
           eyebrow="Ưu đãi đặc biệt"
           title="Sản phẩm khuyến mãi"
           to="/products?sale=true"
         />
-        <div className="grid grid-cols-1 gap-grid-gutter sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {saleProducts.map((product) => (
             <ProductCard key={product.name} product={product} />
           ))}
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-container-max px-grid-gutter pb-section-gap-mobile md:pb-section-gap-desktop">
+      <section className="mx-auto w-full max-w-7xl px-4 md:px-6 pb-12 md:pb-16">
         <SectionHeading
           action="Xem tất cả"
           eyebrow="Được yêu thích nhất"
           title="Sản phẩm bán chạy"
           to="/products"
         />
-        <div className="grid grid-cols-1 gap-grid-gutter sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {bestSellers.map((product) => (
             <ProductCard key={product.name} product={product} />
           ))}
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-container-max px-grid-gutter pb-section-gap-mobile md:pb-section-gap-desktop">
+      <section className="mx-auto w-full max-w-7xl px-4 md:px-6 pb-12 md:pb-16">
         <SectionHeading eyebrow="Mua theo nhu cầu" title="Khám phá danh mục" />
         <div className="grid grid-cols-1 gap-5 md:grid-cols-12 md:auto-rows-[260px]">
           {categoryTiles.map((tile) => (
             <Link
-              className={`group relative block overflow-hidden rounded-lg bg-surface-container-low ${tile.className}`}
+              className={`group relative block overflow-hidden rounded-[var(--radius-lg)] bg-[var(--color-bg-muted)] shadow-card ${tile.className}`}
               key={tile.title}
               to={tile.to}
             >
@@ -342,12 +342,12 @@ export function HomePage() {
                 loading="lazy"
                 src={tile.image}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white md:p-8">
-                <p className="mb-2 text-xs font-bold uppercase text-white/80">{tile.label}</p>
-                <h3 className="font-display text-3xl md:text-4xl">{tile.title}</h3>
+              <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(37,99,235,0.52),rgba(249,168,212,0.28),rgba(253,230,138,0.12))]" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-[var(--color-text-inverse)] md:p-8">
+                <p className="mb-2 font-body text-sm font-medium tracking-wider uppercase text-white/90">{tile.label}</p>
+                <h3 className="font-display text-[var(--text-3xl)] font-extrabold md:text-[var(--text-4xl)]">{tile.title}</h3>
                 {tile.description && (
-                  <p className="mt-2 max-w-sm text-sm leading-6 text-white/90">{tile.description}</p>
+                  <p className="mt-2 max-w-sm font-body text-sm leading-relaxed text-[var(--color-text-inverse)] opacity-90">{tile.description}</p>
                 )}
               </div>
             </Link>
@@ -355,16 +355,16 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="bg-primary py-section-gap-mobile text-white md:py-section-gap-desktop">
-        <div className="mx-auto grid max-w-container-max grid-cols-1 items-center gap-10 px-grid-gutter lg:grid-cols-2">
+      <section className="bg-[linear-gradient(135deg,var(--color-primary-soft),var(--color-secondary-soft)_55%,var(--color-accent-soft))] py-12 text-[var(--color-text-primary)] md:py-16">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 md:px-6 lg:grid-cols-2">
           <div className="text-center lg:text-left">
-            <p className="mb-4 inline-flex rounded-full bg-white/15 px-4 py-1 text-xs font-bold uppercase">
+            <p className="mb-4 inline-flex rounded-full bg-[var(--color-text-inverse)] bg-opacity-15 px-4 py-1 font-body text-sm font-medium tracking-wider uppercase">
               Ưu đãi có hạn
             </p>
-            <h2 className="font-display text-5xl leading-tight tracking-normal md:text-6xl">
+            <h2 className="font-display text-[var(--text-4xl)] font-extrabold leading-tight md:text-[var(--text-5xl)]">
               Mùa tựu trường giảm đến 40%
             </h2>
-            <p className="mx-auto mt-5 max-w-xl text-base leading-8 text-white/80 lg:mx-0">
+            <p className="mx-auto mt-5 max-w-xl font-body text-base leading-loose text-[var(--color-text-secondary)] lg:mx-0">
               Những thiết kế an toàn cho làn da nhạy cảm của bé, sẵn sàng cho ngày mới nhiều khám phá.
             </p>
             <div className="my-8 flex justify-center gap-5 lg:justify-start">
@@ -374,13 +374,13 @@ export function HomePage() {
                 ['15', 'Giây'],
               ].map(([value, label]) => (
                 <div className="min-w-16 text-center" key={label}>
-                  <span className="block font-display text-4xl">{value}</span>
-                  <span className="text-xs font-bold uppercase text-white/70">{label}</span>
+                  <span className="block font-display text-[var(--text-3xl)] font-normal">{value}</span>
+                  <span className="font-body text-sm font-extrabold uppercase text-[var(--color-text-secondary)]">{label}</span>
                 </div>
               ))}
             </div>
             <Link
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-bold uppercase text-primary transition hover:bg-surface-container-low"
+              className="inline-flex min-h-14 items-center justify-center rounded-full bg-primary px-8 py-4 font-display text-base font-extrabold text-on-primary shadow-button transition hover:bg-secondary hover:text-[var(--badge-sale-text)]"
               to="/products?sale=true"
             >
               Săn ngay
@@ -389,7 +389,7 @@ export function HomePage() {
           <div className="grid grid-cols-2 gap-4">
             {saleProducts.slice(0, 2).map((product, index) => (
               <div
-                className={`aspect-[4/5] overflow-hidden rounded-lg bg-white/10 shadow-xl ${index === 0 ? 'translate-y-8' : ''
+                className={`aspect-[4/5] overflow-hidden rounded-[var(--radius-lg)] bg-white/80 shadow-card ${index === 0 ? 'translate-y-8' : ''
                   }`}
                 key={product.name}
               >
@@ -405,9 +405,9 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto grid w-full max-w-container-max grid-cols-1 items-center gap-12 px-grid-gutter py-section-gap-mobile md:py-section-gap-desktop lg:grid-cols-2 lg:gap-20">
+      <section className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-4 md:px-6 py-12 md:py-16 lg:grid-cols-2 lg:gap-20">
         <div className="relative">
-          <div className="aspect-square overflow-hidden rounded-lg bg-surface-container-low">
+          <div className="aspect-square overflow-hidden rounded-[var(--radius-lg)] bg-[var(--color-bg-muted)] shadow-card">
             <img
               alt="Xưởng may thủ công cho thời trang trẻ em"
               className="h-full w-full object-cover"
@@ -415,55 +415,55 @@ export function HomePage() {
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0er3X5OqIm6SIV3MxTBlBv1AMcmen5a1Zfa4dlWeTb2VgVYGld9tWMJuVicWnP0V47pkWLjAurCvLPYsvL0_M4QH3fccKcuyct2Lw2ul6HgZDU6avh_P4CAhycxo9d2zihJKaeGmeLAVRvcSE2jEVWFnuJKogY4oUH9Rgese1-SjMQgY1MMe-2ALy6BGzRV3L2KLq93wiQ72wpij5jnMFPyJ7JRLb7RzBWV8Inf-dv5C9H5XiP7fjE9KfjH6ekkV4vfVC5_C2XmOs"
             />
           </div>
-          <div className="mt-4 border border-border-subtle bg-sage/35 p-6 lg:absolute lg:-bottom-8 lg:-right-8 lg:mt-0 lg:max-w-xs">
-            <p className="font-display text-2xl italic text-primary">
+          <div className="mt-4 rounded-[var(--radius-md)] border border-[var(--color-border)] bg-white p-6 shadow-soft lg:absolute lg:-bottom-8 lg:-right-8 lg:mt-0 lg:max-w-xs">
+            <p className="font-display text-[var(--text-2xl)] font-normal italic text-[var(--color-text-primary)]">
               "Mềm mại như vòng tay mẹ"
             </p>
-            <p className="mt-2 text-sm leading-6 text-on-surface-variant">
+            <p className="mt-2 font-body text-sm leading-relaxed text-[var(--color-text-secondary)]">
               Chúng tôi ưu tiên sợi tự nhiên, đường may phẳng và cảm giác dễ chịu trong từng sản phẩm.
             </p>
           </div>
         </div>
         <div>
-          <p className="mb-4 text-xs font-bold uppercase text-primary">Về STITCH Kids</p>
-          <h2 className="font-display text-4xl leading-tight text-on-surface md:text-5xl">
+          <p className="mb-4 font-body text-sm font-extrabold uppercase text-[var(--color-text-accent)]">Về STITCH Kids</p>
+          <h2 className="font-display text-[var(--text-3xl)] font-extrabold leading-tight text-[var(--color-text-primary)] md:text-[var(--text-4xl)]">
             Vì một tương lai thời trang tử tế cho con
           </h2>
-          <p className="mt-6 text-base leading-8 text-on-surface-variant">
+          <p className="mt-6 font-body text-base leading-loose text-[var(--color-text-secondary)]">
             STITCH Kids ra đời từ mong muốn mang đến trang phục bền, đẹp và an toàn cho trẻ nhỏ. Mỗi chất liệu được chọn để bé thoải mái vận động, còn cha mẹ yên tâm hơn với lựa chọn mỗi ngày.
           </p>
-          <p className="mt-4 text-base leading-8 text-on-surface-variant">
+          <p className="mt-4 font-body text-base leading-loose text-[var(--color-text-secondary)]">
             Từ cotton organic đến linen thoáng mát, các thiết kế giữ tinh thần tối giản, dễ phối và đủ mềm mại cho làn da nhạy cảm.
           </p>
-          <Link className="mt-8 inline-flex items-center gap-3 font-bold uppercase text-primary" to="/products">
+          <Link className="mt-8 inline-flex items-center gap-3 font-body font-medium tracking-wide uppercase text-[var(--color-text-primary)]" to="/products">
             Câu chuyện sản phẩm
             <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
           </Link>
         </div>
       </section>
 
-      <section className="bg-surface py-section-gap-mobile md:py-section-gap-desktop">
-        <div className="mx-auto max-w-container-max px-grid-gutter">
+      <section className="bg-[var(--color-bg-muted)] py-12 md:py-16">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeading eyebrow="Đánh giá" title="Các mẹ nói gì về STITCH Kids" />
-          <div className="grid grid-cols-1 gap-grid-gutter md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {testimonials.map((testimonial) => (
               <article
-                className="flex min-h-[260px] flex-col rounded-lg border border-border-subtle bg-white p-7"
+                className="flex min-h-[260px] flex-col rounded-[var(--radius-md)] border border-[var(--color-border)] bg-white p-7 shadow-soft"
                 key={testimonial.name}
               >
-                <div className="mb-4 flex text-primary">
+                <div className="mb-4 flex text-[var(--color-text-accent)]">
                   {Array.from({ length: 5 }).map((_, index) => (
                     <span className="material-symbols-outlined text-[20px]" key={index}>
                       star
                     </span>
                   ))}
                 </div>
-                <p className="text-base italic leading-8 text-on-surface-variant">
+                <p className="font-body text-base italic leading-loose text-[var(--color-text-secondary)]">
                   "{testimonial.quote}"
                 </p>
                 <div className="mt-auto pt-6">
-                  <p className="font-bold uppercase text-on-surface">{testimonial.name}</p>
-                  <p className="text-sm text-secondary">{testimonial.city}</p>
+                  <p className="font-body font-medium uppercase text-[var(--color-text-primary)]">{testimonial.name}</p>
+                  <p className="font-body text-sm text-[var(--color-text-muted)]">{testimonial.city}</p>
                 </div>
               </article>
             ))}
@@ -471,21 +471,21 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="border-t border-border-subtle bg-cream-warm py-section-gap-mobile md:py-section-gap-desktop">
-        <div className="mx-auto max-w-2xl px-grid-gutter text-center">
-          <h2 className="font-display text-4xl text-on-surface">Kết nối với STITCH</h2>
-          <p className="mt-4 text-body-md leading-7 text-secondary">
+      <section className="border-t border-[var(--color-border)] bg-[linear-gradient(135deg,var(--color-secondary-soft),var(--color-primary-soft))] py-12 md:py-16">
+        <div className="mx-auto max-w-2xl px-4 md:px-6 text-center">
+          <h2 className="font-display text-[var(--text-3xl)] font-extrabold text-[var(--color-text-primary)]">Kết nối với STITCH</h2>
+          <p className="mt-4 font-body text-base leading-relaxed text-[var(--color-text-secondary)]">
             Nhận tin sớm về bộ sưu tập mới, chất liệu an toàn cho bé và ưu đãi đầu mùa.
           </p>
           {subscribed ? (
-            <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-primary bg-white px-6 py-4 font-bold text-primary">
+            <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-[var(--color-primary)] bg-[var(--color-bg-card)] px-6 py-4 font-body font-medium text-[var(--color-text-primary)]">
               <span className="material-symbols-outlined text-[20px]">check_circle</span>
               Cảm ơn bạn đã đăng ký!
             </div>
           ) : (
             <form className="mt-8 flex flex-col gap-3 sm:flex-row" onSubmit={handleSubscribe}>
               <input
-                className="min-h-12 flex-1 rounded-full border border-border-subtle bg-white px-5 text-body-md outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+                className="min-h-14 flex-1 rounded-full border border-[var(--color-border)] bg-white px-5 font-body text-base outline-none shadow-soft transition focus:border-[var(--color-border-focus)] focus:ring-4 focus:ring-primary/20 placeholder:text-[var(--color-text-muted)]"
                 onChange={(event) => setEmail(event.target.value)}
                 placeholder="Địa chỉ email"
                 required
@@ -493,7 +493,7 @@ export function HomePage() {
                 value={email}
               />
               <button
-                className="min-h-12 rounded-full bg-primary px-8 text-sm font-bold uppercase text-white transition hover:bg-clay-dark"
+                className="min-h-14 rounded-full bg-primary px-8 font-display text-base font-extrabold text-on-primary shadow-button transition hover:bg-secondary hover:text-[var(--badge-sale-text)]"
                 type="submit"
               >
                 Đăng ký
@@ -505,4 +505,6 @@ export function HomePage() {
     </div>
   );
 }
+
+
 

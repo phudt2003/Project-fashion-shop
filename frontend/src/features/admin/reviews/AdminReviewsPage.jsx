@@ -127,7 +127,7 @@ export function AdminReviewsPage() {
     <div>
       {/* Header */}
       <header className="flex justify-between items-center mb-8">
-        <h1 className="font-headline text-3xl font-black text-primary">Quản lý Đánh giá</h1>
+        <h1 className="font-headline text-3xl font-bold text-primary">Quản lý Đánh giá</h1>
         <div className="flex items-center gap-3">
           <button className="px-6 py-2.5 rounded-full border border-primary text-primary font-medium hover:bg-primary/10 transition-all flex items-center gap-2">
             <span className="material-symbols-outlined">file_download</span>
@@ -143,28 +143,28 @@ export function AdminReviewsPage() {
       {/* KPI Cards */}
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <div className="bg-surface-container-lowest p-6 rounded-2xl flex flex-col gap-2 border border-outline-variant/10">
-          <span className="text-on-surface-variant font-label text-xs uppercase tracking-wider">Tổng đánh giá</span>
+          <span className="text-on-surface-variant font-label text-sm uppercase tracking-wider">Tổng đánh giá</span>
           <div className="flex items-end gap-2">
             <span className="text-3xl font-bold text-on-surface leading-none">1,284</span>
-            <span className="text-xs font-semibold text-primary mb-1">↑ +34 tuần này</span>
+            <span className="text-sm font-semibold text-primary mb-1">↑ +34 tuần này</span>
           </div>
         </div>
         <div className="bg-surface-container-lowest p-6 rounded-2xl flex flex-col gap-2 border border-outline-variant/10">
-          <span className="text-on-surface-variant font-label text-xs uppercase tracking-wider">Điểm trung bình</span>
+          <span className="text-on-surface-variant font-label text-sm uppercase tracking-wider">Điểm trung bình</span>
           <div className="flex items-end gap-2">
             <span className="text-3xl font-bold text-on-surface leading-none">4.7 ★</span>
-            <span className="text-xs font-medium text-on-surface-variant mb-1">Trên 1.284 đánh giá</span>
+            <span className="text-sm font-medium text-on-surface-variant mb-1">Trên 1.284 đánh giá</span>
           </div>
         </div>
         <div className="bg-tertiary-container/10 p-6 rounded-2xl flex flex-col gap-2 border border-tertiary-container/20">
-          <span className="text-tertiary font-label text-xs uppercase tracking-wider">Chờ duyệt</span>
+          <span className="text-tertiary font-label text-sm uppercase tracking-wider">Chờ duyệt</span>
           <div className="flex items-end gap-2">
             <span className="text-3xl font-bold text-tertiary leading-none">12</span>
             <span className="px-2 py-0.5 rounded-full bg-tertiary-container/30 text-[10px] font-bold text-tertiary mb-1">Cần xử lý</span>
           </div>
         </div>
         <div className="bg-error-container/10 p-6 rounded-2xl flex flex-col gap-2 border border-error-container/20">
-          <span className="text-error font-label text-xs uppercase tracking-wider">Đánh giá 1–2 sao</span>
+          <span className="text-error font-label text-sm uppercase tracking-wider">Đánh giá 1–2 sao</span>
           <div className="flex items-end gap-2">
             <span className="text-3xl font-bold text-error leading-none">8</span>
             <span className="px-2 py-0.5 rounded-full bg-error-container/30 text-[10px] font-bold text-error mb-1">Cần phản hồi</span>
@@ -179,7 +179,7 @@ export function AdminReviewsPage() {
           <div className="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/10">
             <h3 className="font-headline text-lg font-bold mb-4">Tổng quan rating</h3>
             <div className="text-center mb-6">
-              <span className="text-5xl font-black text-on-surface">4.7</span>
+              <span className="text-5xl font-bold text-on-surface">4.7</span>
               <div className="flex justify-center gap-1 my-2">
                 {[1, 2, 3, 4].map((i) => (
                   <span key={i} className="material-symbols-outlined text-tertiary-fixed-dim" style={{ fontVariationSettings: 'FILL 1' }}>
@@ -190,7 +190,7 @@ export function AdminReviewsPage() {
                   star_half
                 </span>
               </div>
-              <p className="text-xs text-on-surface-variant font-label uppercase tracking-widest">1,284 Đánh giá</p>
+              <p className="text-sm text-on-surface-variant font-label uppercase tracking-widest">1,284 Đánh giá</p>
             </div>
             <div className="flex flex-col gap-3">
               {ratingDistribution.map((item) => (
@@ -209,12 +209,12 @@ export function AdminReviewsPage() {
           <div className="bg-primary p-6 rounded-3xl text-white relative overflow-hidden">
             <div className="relative z-10">
               <h4 className="font-bold text-lg mb-1">Mẹo quản lý</h4>
-              <p className="text-xs opacity-80 leading-relaxed mb-4">Phản hồi các đánh giá 1-2 sao trong vòng 4h giúp tăng 15% sự hài lòng của khách hàng.</p>
+              <p className="text-sm opacity-80 leading-relaxed mb-4">Phản hồi các đánh giá 1-2 sao trong vòng 4h giúp tăng 15% sự hài lòng của khách hàng.</p>
               <button className="bg-white/20 hover:bg-white/30 transition-colors text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
                 Xem thêm
               </button>
             </div>
-            <span className="material-symbols-outlined absolute -bottom-4 -right-4 text-8xl opacity-10 rotate-12">lightbulb</span>
+            <span className="material-symbols-outlined absolute -bottom-4 -right-4 text-6xl opacity-10 rotate-12">lightbulb</span>
           </div>
         </aside>
 
@@ -224,7 +224,7 @@ export function AdminReviewsPage() {
           <div className="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/10 shadow-sm">
             <div className="flex flex-wrap items-center gap-3 mb-6">
               <button
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold cursor-pointer transition-colors ${
+                className={`px-4 py-1.5 rounded-full text-sm font-semibold cursor-pointer transition-colors ${
                   activeFilter === 'all' ? 'bg-primary text-white' : 'bg-surface-container-high text-on-surface-variant hover:bg-tertiary-container/20'
                 }`}
                 onClick={() => setActiveFilter('all')}
@@ -232,7 +232,7 @@ export function AdminReviewsPage() {
                 Tất cả
               </button>
               <button
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold cursor-pointer transition-colors ${
+                className={`px-4 py-1.5 rounded-full text-sm font-semibold cursor-pointer transition-colors ${
                   activeFilter === 'pending' ? 'bg-primary text-white' : 'bg-surface-container-high text-on-surface-variant hover:bg-tertiary-container/20'
                 }`}
                 onClick={() => setActiveFilter('pending')}
@@ -240,7 +240,7 @@ export function AdminReviewsPage() {
                 Chờ duyệt
               </button>
               <button
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold cursor-pointer transition-colors ${
+                className={`px-4 py-1.5 rounded-full text-sm font-semibold cursor-pointer transition-colors ${
                   activeFilter === 'low' ? 'bg-primary text-white' : 'bg-surface-container-high text-on-surface-variant hover:bg-error-container/20'
                 }`}
                 onClick={() => setActiveFilter('low')}
@@ -248,7 +248,7 @@ export function AdminReviewsPage() {
                 1-2 sao
               </button>
               <button
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold cursor-pointer transition-colors ${
+                className={`px-4 py-1.5 rounded-full text-sm font-semibold cursor-pointer transition-colors ${
                   activeFilter === 'images' ? 'bg-primary text-white' : 'bg-surface-container-high text-on-surface-variant hover:bg-primary-container/20'
                 }`}
                 onClick={() => setActiveFilter('images')}
@@ -256,7 +256,7 @@ export function AdminReviewsPage() {
                 Có ảnh
               </button>
               <button
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold cursor-pointer transition-colors ${
+                className={`px-4 py-1.5 rounded-full text-sm font-semibold cursor-pointer transition-colors ${
                   activeFilter === 'unreplied' ? 'bg-primary text-white' : 'bg-surface-container-high text-on-surface-variant hover:bg-secondary-container/20'
                 }`}
                 onClick={() => setActiveFilter('unreplied')}
@@ -275,19 +275,19 @@ export function AdminReviewsPage() {
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
               </div>
-              <select className="bg-surface-container-low border-none rounded-xl text-xs font-bold py-2 px-4 focus:ring-2 focus:ring-primary">
+              <select className="bg-surface-container-low border-none rounded-xl text-sm font-bold py-2 px-4 focus:ring-2 focus:ring-primary">
                 <option>Danh mục</option>
               </select>
-              <select className="bg-surface-container-low border-none rounded-xl text-xs font-bold py-2 px-4 focus:ring-2 focus:ring-primary">
+              <select className="bg-surface-container-low border-none rounded-xl text-sm font-bold py-2 px-4 focus:ring-2 focus:ring-primary">
                 <option>Số sao</option>
               </select>
-              <select className="bg-surface-container-low border-none rounded-xl text-xs font-bold py-2 px-4 focus:ring-2 focus:ring-primary">
+              <select className="bg-surface-container-low border-none rounded-xl text-sm font-bold py-2 px-4 focus:ring-2 focus:ring-primary">
                 <option>Trạng thái</option>
               </select>
-              <select className="bg-surface-container-low border-none rounded-xl text-xs font-bold py-2 px-4 focus:ring-2 focus:ring-primary">
+              <select className="bg-surface-container-low border-none rounded-xl text-sm font-bold py-2 px-4 focus:ring-2 focus:ring-primary">
                 <option>Có ảnh</option>
               </select>
-              <select className="bg-surface-container-low border-none rounded-xl text-xs font-bold py-2 px-4 focus:ring-2 focus:ring-primary">
+              <select className="bg-surface-container-low border-none rounded-xl text-sm font-bold py-2 px-4 focus:ring-2 focus:ring-primary">
                 <option>Sắp xếp</option>
               </select>
             </div>
@@ -312,7 +312,7 @@ export function AdminReviewsPage() {
                   >
                     <td className="px-6 py-6 max-w-sm">
                       <div className="flex items-start gap-4">
-                        <div className={`h-10 w-10 rounded-full ${getInitialsColor(review.status)} flex items-center justify-center font-bold text-xs`}>
+                        <div className={`h-10 w-10 rounded-full ${getInitialsColor(review.status)} flex items-center justify-center font-bold text-sm`}>
                           {review.initials}
                         </div>
                         <div>
@@ -338,7 +338,7 @@ export function AdminReviewsPage() {
                       </div>
                     </td>
                     <td className="px-6 py-6 align-top">
-                      <span className="text-xs font-semibold px-3 py-1 bg-surface-container rounded-full">{review.product}</span>
+                      <span className="text-sm font-semibold px-3 py-1 bg-surface-container rounded-full">{review.product}</span>
                     </td>
                     <td className="px-6 py-6 align-top">
                       {getStatusBadge(review.status)}
@@ -393,14 +393,14 @@ export function AdminReviewsPage() {
 
             {/* Pagination */}
             <div className="px-6 py-4 bg-surface-container-low flex justify-between items-center">
-              <span className="text-xs text-on-surface-variant">Hiển thị 1-10 trên 1,284 đánh giá</span>
+              <span className="text-sm text-on-surface-variant">Hiển thị 1-10 trên 1,284 đánh giá</span>
               <div className="flex gap-1">
                 <button className="w-8 h-8 rounded-lg flex items-center justify-center bg-white border border-outline-variant/10 text-on-surface-variant">
                   <span className="material-symbols-outlined text-sm">chevron_left</span>
                 </button>
-                <button className="w-8 h-8 rounded-lg flex items-center justify-center bg-primary text-white text-xs font-bold">1</button>
-                <button className="w-8 h-8 rounded-lg flex items-center justify-center bg-white border border-outline-variant/10 text-on-surface-variant text-xs hover:bg-surface-variant transition-colors">2</button>
-                <button className="w-8 h-8 rounded-lg flex items-center justify-center bg-white border border-outline-variant/10 text-on-surface-variant text-xs hover:bg-surface-variant transition-colors">3</button>
+                <button className="w-8 h-8 rounded-lg flex items-center justify-center bg-primary text-white text-sm font-bold">1</button>
+                <button className="w-8 h-8 rounded-lg flex items-center justify-center bg-white border border-outline-variant/10 text-on-surface-variant text-sm hover:bg-surface-variant transition-colors">2</button>
+                <button className="w-8 h-8 rounded-lg flex items-center justify-center bg-white border border-outline-variant/10 text-on-surface-variant text-sm hover:bg-surface-variant transition-colors">3</button>
                 <button className="w-8 h-8 rounded-lg flex items-center justify-center bg-white border border-outline-variant/10 text-on-surface-variant">
                   <span className="material-symbols-outlined text-sm">chevron_right</span>
                 </button>

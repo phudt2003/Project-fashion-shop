@@ -12,7 +12,7 @@ const ALL_MOCK_PRODUCTS = [
     badge: 'Thủ công',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCT-6TsUDibpY2TVxpnXsKVMIIBGbvZvaDf5R4RS286uz1Vb0BcjdpetV3WFJZTbLH4kB3T1eOMRhz4NRfxv0bLn1hY9_kmx7QQFM0W7aRNM-VQ1vaXE6Xrcg9kxNrQzdmHjVnSSm6usDz2rMDMzKZ9kh995K7gd3vz9mu_mrko4n37e85zK7oB70PsglgEiQBcQldKP_52yc1Xkc0O0HyLDjlYIIWlIIK9e9jbJiZLydclRegh23PYE7670x9RE44AZNvdqXp8dk9r',
     sizes: ['36', '37', '38', '39'],
-    colors: ['#F2ECE6', '#8c4a2d'],
+    colors: ['#FFFFFF', '#F9A8D4'],
   },
   {
     id: 'loafers-da-cao-cap',
@@ -22,7 +22,7 @@ const ALL_MOCK_PRODUCTS = [
     description: 'Da bò Ý, Lót đệm thoáng khí',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCeTktd3lImP1Pkv3-wGkWQZ5N97TGxADtU4zXkHD3L6CKJfJI_I64rLcOF7vHovE_SjIJrqEHb1E521EDixaxp9zbX8jlacwwZYbbMMPpsNcRXQRcLzhkEzEyYKblG2Y5LaRFGtbCOMS-YD8d0r1FXU08NqH846gfS0t6Cbiy8h64nGFXTBMacyeK2de_0aNZoSKSb6iQeQ8tfEOvEuO8-W0KGmZav66G7l_GGg3AuPP8lAocWhkcEpt6-pNvpVv2MiyAP8WWMq2mM',
     sizes: ['38', '39', '40', '41', '42'],
-    colors: ['#8c4a2d', '#31302f'],
+    colors: ['#F9A8D4', '#60A5FA'],
   },
   {
     id: 'giay-sneaker-canvas',
@@ -33,7 +33,7 @@ const ALL_MOCK_PRODUCTS = [
     badge: 'Bán chạy',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAn_QXJPzqmLHfjVjt1xCXCB2RGRBKhUUqNqXppmAqUWgIQ51fXVdM3Xg0gH230Y9sco4VkPXzQ6mFkmFrArHGPSPHHpLRJmPgO0UOqp4s-v1IJpyzUETl23prvtzhF-hG02UiEEtBPu9I0eultse-NPT69G3c4XybdGQIwSMRiPX-cnj0vPE2LLqXJ81BPrGCRChv0o7DKQj2evQ5xyYb58n-MLdA7W-rug5GjyrcjK9fEJdmiF5x_Nl1Ld1hlLXdiJ6GbQTBZWTp0',
     sizes: ['36', '37', '38', '39', '40', '41'],
-    colors: ['#F2ECE6', '#D6E4D8'],
+    colors: ['#FFFFFF', '#DCFCE7'],
   },
   {
     id: 'mules-da-thanh-lich',
@@ -43,7 +43,7 @@ const ALL_MOCK_PRODUCTS = [
     description: 'Da mềm Pastel, Gót gỗ tự nhiên',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDd59E5_JFycovvDrPO6inKDNIfYcPqpCNON-yH1ieSt1CFQC9iAIEL166gdAPUcoX1XxWZsQIblJlrsdBduSEZzhgcSpCRw5ugFZao_WVULdibE9SxZCx2ThtLF8V4CGrmLBwhnQLwg9gRScn_kSnL9XnHIxILD4EG5Jkf14RaAiX3cIR6Qv781jfMSA7tar36BQ7LbYzmohHr-1ve-DAwi0nuH31RIMhiNfLMJ6q4DaHmL_atvAejP2nKbSe2M5odCmPEZbdMO-iQ',
     sizes: ['36', '37', '38', '39'],
-    colors: ['#D6E4D8', '#F2ECE6'],
+    colors: ['#DCFCE7', '#FFFFFF'],
   },
   // Nam (Men)
   {
@@ -55,7 +55,7 @@ const ALL_MOCK_PRODUCTS = [
     badge: 'BÁN CHẠY',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC5ZtF7K9E9fP4Izkxdo19nIBGLNM4fdNu9J0C-iHkDW956ssl_kksXFS53KEOUcV7XP0mXL46l4mRi2db8d2Ssl1IIzLpNrreho01o_-tjjxdxSDuiy4A9QbzZj_m8B8M9pXVukRy0fs6V8i9tVZamb59ofJhgdW0RVpoLl8qtiKOfjOs9cZ60kfWtGjxT61guTkuH8VYc3uXabONMYAuwzwQiXr4i9f5alMK086hVapNa9LgB5h4FRO4UxO_5Seu_nyMElkRexO_v',
     sizes: ['M', 'L', 'XL'],
-    colors: ['#8c4a2d', '#31302f'],
+    colors: ['#F9A8D4', '#60A5FA'],
   },
   {
     id: 'ao-khoac-mang-to',
@@ -65,7 +65,7 @@ const ALL_MOCK_PRODUCTS = [
     description: 'Thương hiệu Việt, Kiểu dáng tối giản',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCP9RNa40ak-m6ZcIb9tZTCCqGAouJQDLm09E76NSVSmOeUPu5Z1RjYP9Mo2pPObRrDqtPGl7fXvxTp1isJzP0UuoVqd4lqaJXgHsmb2r0fakcannzYQPWHClLa8cD_k-1ieNdnA9F3CCDWJsZ6Wcfm-67eVQ8SFg792_m5sLYGN2iD-cmOUyhbFcXmDA9e0V3N7LkXsMjKqfajgbL7IvRntzcjGN5TnZykprtakbTRaKjQHplhhgmlEViDji2cfL3J6b7LBuWdbQYI',
     sizes: ['M', 'L', 'XL'],
-    colors: ['#31302f', '#8c4a2d'],
+    colors: ['#60A5FA', '#F9A8D4'],
   },
   {
     id: 'quan-tay-xep-ly-cao-cap',
@@ -75,7 +75,7 @@ const ALL_MOCK_PRODUCTS = [
     description: 'Vải Cotton tự nhiên, Giữ phom dáng chuẩn',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDYHEs2bk4OCUbYSJQrr2W_tRTv5n5NHnnPBEMy6fb9fYtXwE9f62PZXpojCyDTtt2w3Wcl9cIxH4BkOJhGwFiKX2Bck86HfaprFGoobz2hyIfUx-iyL9Fld1_OoBCCrenRAyQHqPmymO-1G3zqsZ9B5VZH5sZhkRHiaw6va7xvwwgHbH9rjTmOB88__IlHqAhFfAWWtst2Bb8kEjpTRX97Ly-UC-xE4lKdCdW1kLYKFzZi01Jx7C6n9M1eq1WUPFAmdWFNwlPbBW_u',
     sizes: ['M', 'L', 'XL'],
-    colors: ['#31302f'],
+    colors: ['#60A5FA'],
   },
   // Nữ (Women)
   {
@@ -87,7 +87,7 @@ const ALL_MOCK_PRODUCTS = [
     badge: '-40%',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBEEZ22GqCmWse1i8pp2UqXQvpA0M_dqFONLWqxD9TkPWnDAMq916EBbnS898U5bkyGh0SneTpJ7a8THyk6zZUaJa8qyQPCBNFpBG3g30x1v4qxeDUGT57ErGUpG72YGDEi67v-DyKunWgiKMTychMScuQYtVgTasV8IZJYKkQI7-ukhQBuiSlUBbLi45clEwrx8WMWhkXcGD7j0ZYbJ9mLmrKGsBuUnpyLyv3yp44vGSDRfgZC6LD0IsFTwCGrVehlbx90TWVWmyNn',
     sizes: ['S', 'M', 'L'],
-    colors: ['#F2ECE6', '#8c4a2d'],
+    colors: ['#FFFFFF', '#F9A8D4'],
   },
   {
     id: 'vay-lua-terracotta',
@@ -97,7 +97,7 @@ const ALL_MOCK_PRODUCTS = [
     description: '100% Silk cao cấp, Màu đất nung sang trọng',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAjtW8Uz9JBPFvk2W_tcCG1a4iCrmhVzKJmKRg9EaxGctmpSjPHN2wMP_DUEZZmZ6wJVHkTDmQ38mDSIXiSgiyLVcFr86kalKXMmpTafmr9_5EeSQLzPgSeksYcM_bsjibG0vKr65VQ4On2x1KoLF_ly5XciZdHDmS4ZOpiaAQZ38qtwB8xMvbFIp2HNO9JVE5UKvY-rKOYjD5xSjJpez5WTHqOhg7_7Vk8S1aiWK_c8OMHOxutsPqsYLGX1QOpGwzGOneVoOzUyxSp',
     sizes: ['S', 'M'],
-    colors: ['#8c4a2d', '#F2ECE6'],
+    colors: ['#F9A8D4', '#FFFFFF'],
   },
   {
     id: 'tui-tote-da-thuc-vat',
@@ -108,7 +108,7 @@ const ALL_MOCK_PRODUCTS = [
     badge: 'MỚI',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAVEbetp0gB7o027AyhBpe1lNlr5V97tCdpB0HU5oleriyYIjBPmqpuefj_tZVX16p-V8S0_hrlCZTRTLi0diGtIdhDlkEYXS2ZHszjhFrNzzlVeQy_NFHyM0n6GyyjGkpvOzchpS-kqoQfK-0R8lm3gEfch30ddKpu3rOPDlmgfH35yBINd24RFRk1ao6dqH5byYI8nQNrE8kSQCOmjdDTA8fbb1iR2RlOEHcTgwgn6GtRtKF0JbZl280hlGlY6dr-hrvWZ6vr4lLL',
     sizes: ['Một kích cỡ'],
-    colors: ['#F2ECE6'],
+    colors: ['#FFFFFF'],
   },
   // Đồ bé trai
   {
@@ -121,7 +121,7 @@ const ALL_MOCK_PRODUCTS = [
     badge: 'New',
     image: 'https://lh3.googleusercontent.com/aida/AP1WRLszNhGB1m8ZVVqQKMPkFZMnGAo4s43gUSm-Io-6jxZIuAcVlxlLKZOL2f2mjm_S0ke6fOg2DSW17h4VnYLhbJCZLTKSS0tXV-4TcpW5bQDl82BjMrfbNeWFv8Y0h6_S1yJ50LRAvXd9ECKJz50nxCUrDXksnSmhP2q-PlNRuCx-AyImpIXVAeH002eCDkRJ6XTyZX0oCurInUvEjdhiXdwR9G9qxF2RqBaNKV0S10MIVJQuR8AbFcJfiU19',
     sizes: ['S', 'M', 'L', 'XL'],
-    colors: ['#D6E4D8', '#F2ECE6'],
+    colors: ['#DCFCE7', '#FFFFFF'],
   },
   {
     id: 'quan-yem-be-trai-linen',
@@ -133,7 +133,7 @@ const ALL_MOCK_PRODUCTS = [
     badge: 'Bestseller',
     image: 'https://images.unsplash.com/photo-1516627145492-a7f7871c2a2b?auto=format&fit=crop&w=900&q=80',
     sizes: ['S', 'M', 'L'],
-    colors: ['#D6E4D8', '#F2ECE6'],
+    colors: ['#DCFCE7', '#FFFFFF'],
   },
   {
     id: 'do-len-be-trai-ấm-ap',
@@ -145,7 +145,7 @@ const ALL_MOCK_PRODUCTS = [
     badge: 'Ấm áp',
     image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80',
     sizes: ['M', 'L', 'XL'],
-    colors: ['#31302f', '#F2ECE6'],
+    colors: ['#60A5FA', '#FFFFFF'],
   },
   // Đồ bé gái
   {
@@ -159,7 +159,7 @@ const ALL_MOCK_PRODUCTS = [
     badge: 'MỚI',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDNpzVPbISbTyuWOLUzwt1ECvEQ3lCwQeMtrDGC9EjmN1QTJz_YKFSA-KGdbZ1_hLlKS014kP8-B4gxO4keH3CNX06VIXpgR5tN_vUJepBAJW2xK78ma9CPxfA47iTbzLY6UDtTq0uAISqdIW11f4UeJ3BC8aYEMM6u6Sit0Pomdo63ZLvXAZChyc5iS_m7qIjigpn4ESWWHzjqKdcZ4_owAMVcrB0gSUONuDS-AbZi4OBR21j7eaiXDRUKFr1h5aSDZnX4laxKFRXg',
     sizes: ['2Y', '3Y', '4Y', '5Y'],
-    colors: ['#F2ECE6', '#D6E4D8'],
+    colors: ['#FFFFFF', '#DCFCE7'],
   },
   {
     id: 'yem-linen-sage',
@@ -171,7 +171,7 @@ const ALL_MOCK_PRODUCTS = [
     badge: 'ECO',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBK6kw8LMCCXy305Vzz4IzfiA8JBRQjnldgVJUJrncTbsttTrtKBM8P22W-YtRAkJ6q09tK6bNsAFhkYgMf4u68-PSzs0ppYJ_0BLK8f0hfz7XPZ9EfwD_6QQROvJRsXIK9bKvXfAgAnXCPu9YYHKUV-d3Olp_bBXwxeeVMRHgRkC3xMyx_9gYaljyBtwA3-5hT31_HSr9NR_4F9kz1vxy-pBincnVKJehuyyQyVvGxS2u6rMBsnYxz5lGSen6H_UF6ZvYcpC_O2jZT',
     sizes: ['3Y', '4Y', '5Y', '6Y'],
-    colors: ['#D6E4D8', '#F2ECE6'],
+    colors: ['#DCFCE7', '#FFFFFF'],
   },
   {
     id: 'set-chan-vay-dusty-rose',
@@ -182,7 +182,7 @@ const ALL_MOCK_PRODUCTS = [
     description: 'Set áo cotton và chân váy hồng phấn',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAj5p1wHBC-swQfLiW7If5JsJ6XDKajAFHQbEc4eN2peXIWdTbx6FBJNKRkBogrgOkr7uCzu4CA2HD0INNTpr2hspuNzG8Mozpwck4Twmy3XsxYRUF4F6dO0b1FbdfJEQQjo0QBg0ZzAkFLpfgSRFxGi3NLEYuED-AWXMwOKTO_UJzedB-JWSA3yfn04tCsmymbrKgeyqrS_Ev2SskX2zt9zWIVPECd71-H32J0eWMcpRIn_2WGPIh-SzS2w8PrCZb3r-NCABxYMnpo',
     sizes: ['4Y', '5Y', '6Y', '7Y'],
-    colors: ['#D8A2A6', '#F2ECE6'],
+    colors: ['#F9A8D4', '#FFFFFF'],
   },
   {
     id: 'ao-len-merino-be-gai',
@@ -194,7 +194,7 @@ const ALL_MOCK_PRODUCTS = [
     badge: 'ẤM ÁP',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCuvPQIE6zPdtWX8HC6qSw3Vinj9d3TWZ9r9pvltUTeSe4PDhbqjgNSrhUFsFRBFesuNMpKGSrWLVFn87hlNM7Qm0SlEzhlUc7AgEUS171Bw9J7djOBi2wVSzM-NbBISV5cQQ4iKl-zp_6ND2GjOPmX7-KkYfQm8ptYK5WkWS0FnMVLS7cWRuwzLt5xkhHPO7Rd89xxm5nuxAR5WY9HE2BP4jmBlpgu-fb2d0fgghbon7lWmJZNhY6ItLCp5UteaiW1aNsOzMxah4Dk',
     sizes: ['5Y', '6Y', '7Y', '8Y'],
-    colors: ['#8c4a2d', '#F2ECE6'],
+    colors: ['#F9A8D4', '#FFFFFF'],
   },
   {
     id: 'dam-smock-cotton-kem',
@@ -205,7 +205,7 @@ const ALL_MOCK_PRODUCTS = [
     description: 'Thân smock co giãn, lớp lót cotton dịu da',
     image: 'https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=900&q=80',
     sizes: ['2Y', '3Y', '4Y', '5Y', '6Y'],
-    colors: ['#F2ECE6', '#D6E4D8'],
+    colors: ['#FFFFFF', '#DCFCE7'],
   },
   {
     id: 'ao-khoac-quilted-sage',
@@ -217,7 +217,7 @@ const ALL_MOCK_PRODUCTS = [
     badge: 'LIMITED',
     image: 'https://images.unsplash.com/photo-1604004555489-723a93d6ce74?auto=format&fit=crop&w=900&q=80',
     sizes: ['4Y', '5Y', '6Y', '7Y', '8Y'],
-    colors: ['#D6E4D8', '#31302f'],
+    colors: ['#DCFCE7', '#60A5FA'],
   },
   {
     id: 'bo-pyjama-hoa-cuc',
@@ -228,7 +228,7 @@ const ALL_MOCK_PRODUCTS = [
     description: 'Vải modal mềm mịn cho giấc ngủ thoải mái',
     image: 'https://images.unsplash.com/photo-1622295057285-ed0f88067a86?auto=format&fit=crop&w=900&q=80',
     sizes: ['2Y', '3Y', '4Y', '5Y', '6Y'],
-    colors: ['#F2ECE6', '#D8A2A6'],
+    colors: ['#FFFFFF', '#F9A8D4'],
   },
   {
     id: 'chan-vay-tulle-ivory',
@@ -240,16 +240,16 @@ const ALL_MOCK_PRODUCTS = [
     badge: 'YÊU THÍCH',
     image: 'https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=900&q=80',
     sizes: ['3Y', '4Y', '5Y', '6Y', '7Y'],
-    colors: ['#F2ECE6', '#D8A2A6'],
+    colors: ['#FFFFFF', '#F9A8D4'],
   }
 ];
 
 const COLOR_LABELS = {
-  '#F2ECE6': 'Kem',
-  '#8c4a2d': 'Đất nung',
-  '#D6E4D8': 'Xanh sage',
-  '#31302f': 'Than',
-  '#D8A2A6': 'Hồng phấn',
+  '#FFFFFF': 'Trắng sạch',
+  '#60A5FA': 'Xanh da trời',
+  '#F9A8D4': 'Hồng pastel',
+  '#FDE68A': 'Vàng nhạt',
+  '#DCFCE7': 'Xanh mint',
 };
 
 export function CategoryPage() {
@@ -383,7 +383,7 @@ export function CategoryPage() {
   return (
     <div className="w-full flex flex-col">
       {/* Hero Header */}
-      <section className="w-full border-b border-border-subtle bg-surface">
+      <section className="w-full border-b border-border-subtle bg-[linear-gradient(135deg,var(--color-primary-soft),#FFFFFF_45%,var(--color-secondary-soft))]">
         <div className="max-w-[1440px] mx-auto w-full px-8 md:px-16 py-12 md:py-16">
           <nav className="flex flex-wrap items-center gap-2 mb-4 font-label-uppercase text-label-uppercase text-ink-light">
             <Link className="hover:text-primary transition-colors" to="/">
@@ -415,7 +415,7 @@ export function CategoryPage() {
                 { icon: 'verified', label: 'An toàn da bé' },
                 { icon: 'local_shipping', label: 'Đổi size dễ' },
               ].map((item) => (
-                <div key={item.label} className="border border-border-subtle bg-surface-container-low px-3 py-4 rounded-lg">
+                <div key={item.label} className="rounded-[var(--radius-md)] border border-border-subtle bg-white/85 px-3 py-4 shadow-soft">
                   <span className="material-symbols-outlined text-primary">{item.icon}</span>
                   <p className="mt-2 text-caption font-caption text-on-surface-variant uppercase">
                     {item.label}
@@ -430,7 +430,7 @@ export function CategoryPage() {
       {/* Catalog Body */}
       <section className="max-w-[1440px] mx-auto w-full px-8 md:px-16 py-section-gap-desktop grid grid-cols-1 md:grid-cols-12 gap-grid-gutter">
         {/* Sidebar Filters */}
-        <aside className="col-span-1 md:col-span-3 space-y-element-gap-lg md:sticky md:top-[120px] h-fit border border-border-subtle p-6 rounded-lg bg-white shadow-sm">
+        <aside className="col-span-1 md:col-span-3 space-y-element-gap-lg md:sticky md:top-[120px] h-fit rounded-[var(--radius-md)] border border-border-subtle bg-white p-6 shadow-card">
           {typeOptions.length > 0 && (
             <div>
               <h3 className="font-label-uppercase text-label-uppercase text-on-surface mb-element-gap-md font-bold">
@@ -440,7 +440,7 @@ export function CategoryPage() {
                 <label className="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors">
                   <input
                     checked={selectedTypes.length === 0}
-                    className="w-4 h-4 border-outline-variant text-primary focus:ring-primary rounded-sm"
+                    className="w-4 h-4 border-outline-variant text-primary focus:ring-primary rounded-md"
                     onChange={() => setSelectedTypes([])}
                     type="checkbox"
                   />
@@ -453,7 +453,7 @@ export function CategoryPage() {
                   >
                     <input
                       checked={selectedTypes.includes(type)}
-                      className="w-4 h-4 border-outline-variant text-primary focus:ring-primary rounded-sm"
+                      className="w-4 h-4 border-outline-variant text-primary focus:ring-primary rounded-md"
                       onChange={() => handleTypeToggle(type)}
                       type="checkbox"
                     />
@@ -475,7 +475,7 @@ export function CategoryPage() {
                   <button
                     key={size}
                     onClick={() => handleSizeToggle(size)}
-                    className={`border rounded-full py-2 text-caption font-caption transition-all font-semibold ${
+                    className={`rounded-full border py-3 text-caption font-caption font-extrabold transition-all ${
                       isActive
                         ? 'border-primary bg-primary text-white'
                         : 'border-border-subtle hover:border-primary hover:text-primary bg-transparent text-on-surface'
@@ -501,7 +501,7 @@ export function CategoryPage() {
                     onClick={() => handleColorToggle(color.hex)}
                     style={{ backgroundColor: color.hex }}
                     title={color.name}
-                    className={`w-8 h-8 rounded-full border border-border-subtle ring-offset-2 hover:ring-2 ring-primary transition-all ${
+                    className={`h-9 w-9 rounded-full border border-border-subtle ring-primary ring-offset-2 transition-all hover:ring-2 ${
                       isActive ? 'ring-2' : ''
                     }`}
                   />
@@ -540,7 +540,7 @@ export function CategoryPage() {
                   setSelectedColors([]);
                   setMaxPrice(defaultMaxPrice);
                 }}
-                className="w-full border border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-full font-label-uppercase text-[11px] transition-all font-bold"
+                className="w-full border border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-full font-label-uppercase text-[11px] font-extrabold transition-all"
               >
                 Xóa bộ lọc
               </button>
@@ -576,7 +576,7 @@ export function CategoryPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-grid-gutter gap-y-12">
                 {sortedProducts.map((product) => (
                   <article className="product-card group" key={product.id}>
-                    <div className="relative overflow-hidden rounded-lg aspect-[3/4] mb-element-gap-md bg-surface-container-low">
+                    <div className="relative mb-element-gap-md overflow-hidden rounded-[var(--radius-md)] bg-surface-container-low aspect-[3/4] shadow-card">
                       <Link className="block h-full" to={`/products/${product.id}`}>
                         <img
                           alt={product.name}
@@ -584,14 +584,14 @@ export function CategoryPage() {
                           src={product.image}
                         />
                         {product.badge && (
-                          <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-caption font-caption font-bold tracking-widest uppercase text-on-surface">
+                          <span className="absolute left-4 top-4 rounded-full bg-secondary px-3 py-1 text-caption font-caption font-extrabold uppercase text-[var(--badge-sale-text)] shadow-soft">
                             {product.badge}
                           </span>
                         )}
                       </Link>
-                      <div className="absolute bottom-0 left-0 w-full p-4 bg-white/85 backdrop-blur-md translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 flex justify-center pointer-events-none">
+                      <div className="pointer-events-none absolute bottom-0 left-0 flex w-full translate-y-full justify-center bg-white/90 p-4 opacity-0 backdrop-blur-md transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                         <button
-                          className="bg-clay-dark text-white font-label-uppercase text-label-uppercase py-3 px-8 rounded-full hover:bg-primary transition-colors pointer-events-auto"
+                          className="pointer-events-auto rounded-full bg-primary px-8 py-3 font-label-uppercase text-label-uppercase text-on-primary shadow-button transition-colors hover:bg-secondary hover:text-[var(--badge-sale-text)]"
                           type="button"
                         >
                           Thêm nhanh
@@ -601,7 +601,7 @@ export function CategoryPage() {
                     <div className="space-y-1">
                       <div className="flex justify-between items-start gap-3">
                         <Link
-                          className="font-body-lg text-body-lg text-on-surface group-hover:text-primary transition-colors"
+                          className="font-display text-title-sm text-on-surface transition-colors group-hover:text-primary"
                           to={`/products/${product.id}`}
                         >
                           {product.name}
@@ -617,7 +617,7 @@ export function CategoryPage() {
                       <p className="font-caption text-caption text-ink-light opacity-70">
                         {product.description}
                       </p>
-                      <p className="font-body-md text-body-md font-bold text-clay-dark">
+                      <p className="font-body-md text-body-md font-extrabold text-primary">
                         {formatPrice(product.price)}
                       </p>
                     </div>
@@ -650,7 +650,7 @@ export function CategoryPage() {
               </div>
             </>
           ) : (
-            <div className="flex flex-col items-center justify-center py-20 text-center border border-dashed border-border-subtle rounded-lg bg-white/40">
+            <div className="flex flex-col items-center justify-center py-20 text-center rounded-[var(--radius-md)] border border-dashed border-border-subtle bg-white/70 shadow-soft">
               <span className="material-symbols-outlined text-secondary text-5xl mb-4">
                 sentiment_dissatisfied
               </span>
@@ -666,7 +666,7 @@ export function CategoryPage() {
       </section>
 
       {/* Newsletter Subscription */}
-      <section className="bg-sage/20 py-section-gap-desktop w-full border-t border-border-subtle mt-12">
+      <section className="bg-[linear-gradient(135deg,var(--color-secondary-soft),var(--color-primary-soft))] py-section-gap-desktop w-full border-t border-border-subtle mt-12">
         <div className="max-w-[1440px] mx-auto px-8 md:px-16 flex flex-col md:flex-row items-center justify-between gap-element-gap-lg">
           <div className="max-w-xl">
             <h2 className="font-display text-headline-lg text-primary mb-4">Kết nối cùng Stitch</h2>
@@ -683,7 +683,7 @@ export function CategoryPage() {
             ) : (
               <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4">
                 <input
-                  className="bg-transparent border-b-2 border-primary py-3 px-2 focus:outline-none focus:border-clay-dark font-body-md min-w-[300px]"
+                  className="min-w-[300px] rounded-full border border-border-subtle bg-white px-5 py-3 font-body-md shadow-soft focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/20"
                   placeholder="Email của bạn"
                   type="email"
                   value={newsletterEmail}
@@ -691,7 +691,7 @@ export function CategoryPage() {
                   required
                 />
                 <button
-                  className="bg-primary text-white px-10 py-4 rounded-full font-label-uppercase text-label-uppercase hover:bg-clay-dark transition-colors"
+                  className="rounded-full bg-primary px-10 py-4 font-label-uppercase text-label-uppercase text-on-primary shadow-button transition-colors hover:bg-secondary hover:text-[var(--badge-sale-text)]"
                   type="submit"
                 >
                   Đăng ký
@@ -704,3 +704,5 @@ export function CategoryPage() {
     </div>
   );
 }
+
+

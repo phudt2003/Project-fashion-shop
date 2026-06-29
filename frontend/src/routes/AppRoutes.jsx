@@ -5,6 +5,7 @@ import { AuthLayout } from '../layouts/AuthLayout';
 import { HomePage } from '../pages/HomePage';
 import { ProductListPage } from '../features/products/pages/ProductListPage';
 import { ProductDetailPage } from '../features/products/pages/ProductDetailPage';
+import { SalePage } from '../features/products/pages/SalePage';
 import { CategoryPage } from '../features/categories/pages/CategoryPage';
 import { SearchPage } from '../features/products/pages/SearchPage';
 import { UnauthorizedPage } from '../pages/UnauthorizedPage';
@@ -53,6 +54,7 @@ export function AppRoutes() {
         <Route path="/" element={<HomePage />} />
         <Route path="/products" element={<ProductListPage />} />
         <Route path="/products/:slug" element={<ProductDetailPage />} />
+        <Route path="/sale" element={<SalePage />} />
         <Route path="/categories/:slug" element={<CategoryPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/unauthorized" element={<UnauthorizedPage />} />

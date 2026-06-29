@@ -27,9 +27,9 @@ const PRODUCT_DATABASE = {
     ],
     sizes: ['36', '37', '38', '39', '40', '41'],
     colors: [
-      { hex: '#E5D3C2', name: 'Màu Kem' },
-      { hex: '#5C4033', name: 'Nâu Đất' },
-      { hex: '#1C1C1A', name: 'Đen Tuyển' }
+      { hex: '#FFFFFF', name: 'Màu Kem' },
+      { hex: '#F9A8D4', name: 'Nâu Đất' },
+      { hex: '#60A5FA', name: 'Đen Tuyển' }
     ]
   },
   'loafers-da-cao-cap': {
@@ -44,8 +44,8 @@ const PRODUCT_DATABASE = {
     ],
     sizes: ['38', '39', '40', '41', '42'],
     colors: [
-      { hex: '#5C4033', name: 'Nâu Đậm' },
-      { hex: '#1C1C1A', name: 'Đen Tuyển' }
+      { hex: '#F9A8D4', name: 'Nâu Đậm' },
+      { hex: '#60A5FA', name: 'Đen Tuyển' }
     ]
   },
   'giay-sneaker-canvas': {
@@ -60,8 +60,8 @@ const PRODUCT_DATABASE = {
     ],
     sizes: ['36', '37', '38', '39', '40', '41'],
     colors: [
-      { hex: '#E5D3C2', name: 'Trắng Kem' },
-      { hex: '#D6E4D8', name: 'Xanh Bạc Hà' }
+      { hex: '#FFFFFF', name: 'Trắng Kem' },
+      { hex: '#DCFCE7', name: 'Xanh Bạc Hà' }
     ]
   },
   'mules-da-thanh-lich': {
@@ -76,8 +76,8 @@ const PRODUCT_DATABASE = {
     ],
     sizes: ['36', '37', '38', '39'],
     colors: [
-      { hex: '#D6E4D8', name: 'Xanh Bạc Hà' },
-      { hex: '#E5D3C2', name: 'Trắng Kem' }
+      { hex: '#DCFCE7', name: 'Xanh Bạc Hà' },
+      { hex: '#FFFFFF', name: 'Trắng Kem' }
     ]
   }
 };
@@ -170,7 +170,7 @@ function LegacyProductDetailPage() {
   return (
     <div className="w-full max-w-[1440px] mx-auto px-6 md:px-16 pt-12 flex flex-col pb-24">
       {successToast && (
-        <div className="fixed top-24 right-6 z-50 bg-[#D6E4D8] border border-primary text-on-surface px-6 py-4 rounded-xl shadow-lg flex items-center gap-3 animate-fade-in font-medium">
+        <div className="fixed top-24 right-6 z-50 bg-[#DCFCE7] border border-primary text-on-surface px-6 py-4 rounded-xl shadow-lg flex items-center gap-3 animate-fade-in font-medium">
           <span className="material-symbols-outlined text-primary">check_circle</span>
           Đã thêm sản phẩm vào giỏ hàng!
         </div>
@@ -180,7 +180,7 @@ function LegacyProductDetailPage() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
         {/* Gallery Grid */}
         <div className="md:col-span-7 grid grid-cols-1 gap-4">
-          <div className="rounded-lg overflow-hidden bg-cream-warm aspect-[4/5]">
+          <div className="overflow-hidden rounded-[var(--radius-md)] bg-cream-warm aspect-[4/5]">
             <img 
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" 
               src={product.image} 
@@ -190,7 +190,7 @@ function LegacyProductDetailPage() {
           {product.gallery && product.gallery.length > 1 && (
             <div className="grid grid-cols-2 gap-4">
               {product.gallery.slice(1, 3).map((imgUrl, index) => (
-                <div key={index} className="rounded-lg overflow-hidden bg-cream-warm aspect-square">
+                <div key={index} className="overflow-hidden rounded-[var(--radius-md)] bg-cream-warm aspect-square">
                   <img 
                     className="w-full h-full object-cover" 
                     src={imgUrl} 
@@ -289,13 +289,13 @@ function LegacyProductDetailPage() {
           <div className="flex flex-col gap-4 mt-4">
             <button
               onClick={handleAddToCart}
-              className="w-full h-16 bg-primary text-on-primary rounded-full font-label-uppercase text-label-uppercase hover:bg-clay-dark transition-all transform active:scale-95 shadow-lg shadow-primary/10 font-bold"
+              className="w-full h-16 bg-primary text-on-primary rounded-full font-label-uppercase text-label-uppercase hover:bg-secondary hover:text-[var(--badge-sale-text)] transition-all transform active:scale-95 shadow-lg shadow-primary/10 font-bold"
             >
               Thêm vào giỏ hàng
             </button>
             <button 
               onClick={handleAddToCart}
-              className="w-full h-16 border border-ink-light text-on-surface rounded-full font-label-uppercase text-label-uppercase hover:bg-on-surface hover:text-white transition-all transform active:scale-95 font-bold"
+              className="w-full h-16 border border-ink-light text-on-surface rounded-full font-label-uppercase text-label-uppercase hover:bg-primary hover:text-on-primary transition-all transform active:scale-95 font-bold"
             >
               Mua ngay
             </button>
@@ -393,7 +393,7 @@ function LegacyProductDetailPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {RECOMMENDATIONS.map((rec) => (
             <Link to={`/products/${rec.id}`} key={rec.id} className="group flex flex-col gap-4 cursor-pointer block">
-              <div className="aspect-[4/5] overflow-hidden rounded-lg bg-cream-warm relative">
+              <div className="aspect-[4/5] overflow-hidden rounded-[var(--radius-md)] bg-cream-warm relative">
                 <img 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                   src={rec.image} 
@@ -413,3 +413,4 @@ function LegacyProductDetailPage() {
     </div>
   );
 }
+

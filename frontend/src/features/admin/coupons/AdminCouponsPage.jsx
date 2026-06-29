@@ -90,21 +90,21 @@ export function AdminCouponsPage() {
     switch (status) {
       case 'active':
         return (
-          <span className="flex items-center gap-1.5 text-green-700 bg-green-50 px-2 py-1 rounded-lg text-xs font-bold w-fit">
-            <span className="w-1.5 h-1.5 bg-green-600 rounded-full animate-pulse"></span>
+          <span className="flex items-center gap-1.5 text-green-700 bg-green-50 px-2 py-1 rounded-lg text-sm font-bold w-fit">
+            <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
             Đang chạy
           </span>
         );
       case 'expiring':
         return (
-          <span className="flex items-center gap-1.5 text-amber-700 bg-amber-50 px-2 py-1 rounded-lg text-xs font-bold w-fit">
+          <span className="flex items-center gap-1.5 text-amber-700 bg-amber-50 px-2 py-1 rounded-lg text-sm font-bold w-fit">
             <span className="w-1.5 h-1.5 bg-amber-600 rounded-full"></span>
             Sắp hết
           </span>
         );
       case 'ended':
         return (
-          <span className="flex items-center gap-1.5 text-on-surface-variant bg-surface-container-high px-2 py-1 rounded-lg text-xs font-bold w-fit">
+          <span className="flex items-center gap-1.5 text-on-surface-variant bg-surface-container-high px-2 py-1 rounded-lg text-sm font-bold w-fit">
             <span className="w-1.5 h-1.5 bg-outline rounded-full"></span>
             Đã kết thúc
           </span>
@@ -194,7 +194,7 @@ export function AdminCouponsPage() {
           <span className="text-on-surface-variant font-body-sm">Doanh thu từ KM</span>
           <div className="flex items-end justify-between">
             <span className="font-display-lg text-display-lg text-on-surface">45.2M</span>
-            <span className="text-on-surface-variant text-xs font-bold mb-1">VNĐ</span>
+            <span className="text-on-surface-variant text-sm font-bold mb-1">VNĐ</span>
           </div>
           <div className="h-1 w-full bg-surface-container-high rounded-full mt-2 overflow-hidden">
             <div className="h-full bg-primary-container w-[80%]"></div>
@@ -306,14 +306,14 @@ export function AdminCouponsPage() {
                 >
                   <td className="px-6 py-5">
                     <p className="font-title-sm text-sm text-on-surface">{coupon.name}</p>
-                    <span className="text-xs text-on-surface-variant">Campaign #{coupon.code}</span>
+                    <span className="text-sm text-on-surface-variant">Campaign #{coupon.code}</span>
                   </td>
                   <td className="px-6 py-5">
                     <div className="flex flex-col gap-1">
-                      <span className={`font-mono text-sm font-bold ${coupon.code === '---' ? 'text-tertiary' : 'text-primary'}`}>
+                      <span className={`font-sans text-sm font-bold ${coupon.code === '---' ? 'text-tertiary' : 'text-primary'}`}>
                         {coupon.code}
                       </span>
-                      <span className={`${getTypeColor(coupon.type)} px-2 py-0.5 rounded text-[10px] w-fit uppercase font-bold`}>
+                      <span className={`${getTypeColor(coupon.type)} px-2 py-0.5 rounded-lg text-[10px] w-fit uppercase font-bold`}>
                         {coupon.type}
                       </span>
                     </div>
@@ -321,12 +321,12 @@ export function AdminCouponsPage() {
                   <td className="px-6 py-5 font-data-tabular">{coupon.discount}</td>
                   <td className="px-6 py-5 text-sm text-on-surface-variant">{coupon.condition}</td>
                   <td className="px-6 py-5 text-center">
-                    <span className="bg-surface-container-high px-3 py-1 rounded-full text-xs">{coupon.category}</span>
+                    <span className="bg-surface-container-high px-3 py-1 rounded-full text-sm">{coupon.category}</span>
                   </td>
                   <td className="px-6 py-5 text-sm">{formatDate(coupon.startDate)} - {formatDate(coupon.endDate)}</td>
                   <td className="px-6 py-5">
                     <div className="flex flex-col gap-1">
-                      <span className="text-xs font-bold">{coupon.used} / {coupon.limit}</span>
+                      <span className="text-sm font-bold">{coupon.used} / {coupon.limit}</span>
                       <div className="w-16 h-1 bg-surface-container-high rounded-full">
                         <div
                           className={`h-full rounded-full ${
@@ -359,7 +359,7 @@ export function AdminCouponsPage() {
 
         {/* Pagination */}
         <div className="p-6 border-t border-outline-variant/30 flex items-center justify-between">
-          <span className="text-xs text-on-surface-variant">
+          <span className="text-sm text-on-surface-variant">
             Hiển thị {startIndex + 1} - {Math.min(endIndex, filteredCoupons.length)} của {filteredCoupons.length} khuyến mãi
           </span>
           <div className="flex items-center gap-1">
@@ -373,7 +373,7 @@ export function AdminCouponsPage() {
             {[1, 2, 3].map(page => (
               <button
                 key={page}
-                className={`w-8 h-8 flex items-center justify-center rounded-lg font-bold text-xs transition-colors ${
+                className={`w-8 h-8 flex items-center justify-center rounded-lg font-bold text-sm transition-colors ${
                   currentPage === page
                     ? 'bg-primary text-on-primary'
                     : 'hover:bg-surface-container-high text-on-surface-variant'
@@ -386,7 +386,7 @@ export function AdminCouponsPage() {
             {totalPages > 3 && <span className="px-2 text-on-surface-variant">...</span>}
             {totalPages > 3 && (
               <button
-                className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface-variant text-xs"
+                className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface-variant text-sm"
                 onClick={() => setCurrentPage(totalPages)}
               >
                 {totalPages}
@@ -444,7 +444,7 @@ export function AdminCouponsPage() {
                 <div className="space-y-2">
                   <label className="font-title-sm text-sm text-on-surface">Mã Coupon</label>
                   <input
-                    className="w-full px-4 py-3 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 font-mono font-bold uppercase"
+                    className="w-full px-4 py-3 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 font-sans font-bold uppercase"
                     placeholder="XMAS2024"
                     type="text"
                   />
@@ -505,8 +505,8 @@ export function AdminCouponsPage() {
                       type="number"
                     />
                     <div className="absolute right-2 flex items-center gap-1 bg-surface-container-lowest rounded-lg p-1 shadow-sm">
-                      <button className="px-2 py-0.5 bg-primary text-on-primary rounded text-xs" type="button">%</button>
-                      <button className="px-2 py-0.5 text-on-surface-variant rounded text-xs" type="button">VNĐ</button>
+                      <button className="px-2 py-0.5 bg-primary text-on-primary rounded-lg text-sm" type="button">%</button>
+                      <button className="px-2 py-0.5 text-on-surface-variant rounded-lg text-sm" type="button">VNĐ</button>
                     </div>
                   </div>
                 </div>
@@ -525,19 +525,19 @@ export function AdminCouponsPage() {
                 <label className="font-title-sm text-sm text-on-surface">Áp dụng cho danh mục</label>
                 <div className="flex flex-wrap gap-4">
                   <label className="flex items-center gap-2 cursor-pointer">
-                    <input className="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary/20" type="checkbox" defaultChecked />
+                    <input className="w-5 h-5 rounded-lg border-outline-variant text-primary focus:ring-primary/20" type="checkbox" defaultChecked />
                     <span className="text-sm">Tất cả</span>
                   </label>
                   <label className="flex items-center gap-2 cursor-pointer">
-                    <input className="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary/20" type="checkbox" />
+                    <input className="w-5 h-5 rounded-lg border-outline-variant text-primary focus:ring-primary/20" type="checkbox" />
                     <span className="text-sm">Bé Trai</span>
                   </label>
                   <label className="flex items-center gap-2 cursor-pointer">
-                    <input className="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary/20" type="checkbox" />
+                    <input className="w-5 h-5 rounded-lg border-outline-variant text-primary focus:ring-primary/20" type="checkbox" />
                     <span className="text-sm">Bé Gái</span>
                   </label>
                   <label className="flex items-center gap-2 cursor-pointer">
-                    <input className="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary/20" type="checkbox" />
+                    <input className="w-5 h-5 rounded-lg border-outline-variant text-primary focus:ring-primary/20" type="checkbox" />
                     <span className="text-sm">Giày dép</span>
                   </label>
                 </div>

@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { Show, UserButton, useUser } from '@clerk/react';
 import { useAuth } from '../hooks/useAuth';
 import { USER_ROLES } from '../config/constants';
+import { LayoutDashboard, UserCog } from 'lucide-react';
 
 export function Header() {
   const cartItems = useSelector((state) => state.cart?.items || []);
@@ -46,10 +47,10 @@ export function Header() {
       ? currentPath.startsWith(targetPath)
       : pathname.startsWith(targetPath);
 
-    return `font-label-uppercase text-label-uppercase transition-colors duration-300 ${
+    return `font-body text-sm font-extrabold transition-colors duration-300 ${
       isActive 
-        ? 'text-primary font-bold' 
-        : 'text-on-surface-variant hover:text-primary'
+        ? 'text-primary' 
+        : 'text-[var(--color-text-secondary)] hover:text-primary'
     }`;
   };
 
@@ -67,17 +68,17 @@ export function Header() {
   ];
 
   return (
-    <header className="fixed top-0 w-full z-50 glass-nav shadow-sm transition-all duration-300 py-4">
-      <nav className="flex justify-between items-center px-grid-gutter max-w-container-max mx-auto w-full">
+    <header className="fixed top-0 z-50 w-full glass-nav shadow-soft transition-all duration-300 py-4">
+      <nav className="flex justify-between items-center px-4 md:px-6 max-w-7xl mx-auto w-full">
         {/* Brand Logo */}
         <div className="flex justify-start">
-          <Link to="/" className="font-display text-headline-md tracking-widest text-primary">
-            STITCH
+          <Link to="/" className="font-display text-[var(--text-xl)] font-extrabold text-primary">
+            STITCH Kids
           </Link>
         </div>
         
         {/* Desktop Nav Links */}
-        <div className="hidden md:flex items-center justify-center gap-element-gap-lg">
+        <div className="hidden md:flex items-center justify-center gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.path}
@@ -90,17 +91,17 @@ export function Header() {
         </div>
 
         {/* Auth & Cart controls */}
-        <div className="flex justify-end items-center gap-element-gap-md">
+        <div className="flex justify-end items-center gap-4">
           {/* Cart Icon - Hide for admin users */}
           {userRole !== USER_ROLES.ADMIN && (
             <Link 
               to="/cart" 
-              className="text-on-surface-variant hover:text-primary transition-opacity relative flex items-center mr-1"
+              className="relative mr-1 flex h-11 w-11 items-center justify-center rounded-full bg-white text-[var(--color-text-secondary)] shadow-soft transition-all hover:-translate-y-0.5 hover:text-primary"
               title="Giỏ hàng"
             >
               <span className="material-symbols-outlined">shopping_bag</span>
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-primary text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center">
+                <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-secondary text-[10px] font-extrabold text-[var(--badge-sale-text)]">
                   {cartCount}
                 </span>
               )}
@@ -113,9 +114,9 @@ export function Header() {
               <UserButton afterSignOutUrl="/">
                 <UserButton.MenuItems>
                   {userRole === USER_ROLES.ADMIN && (
-                    <UserButton.Link label="Admin Dashboard" href="/admin" />
+                    <UserButton.Link label="Admin Dashboard" href="/admin" labelIcon={<LayoutDashboard size={16} />} />
                   )}
-                  <UserButton.Link label="Manage Account" href="/profile" />
+                  <UserButton.Link label="Manage Account" href="/profile" labelIcon={<UserCog size={16} />} />
                 </UserButton.MenuItems>
               </UserButton>
             </div>
@@ -124,7 +125,7 @@ export function Header() {
           <Show when="signed-out">
             <Link 
               to="/login" 
-              className="text-on-surface-variant hover:text-primary transition-opacity flex items-center ml-1"
+              className="ml-1 flex h-11 w-11 items-center justify-center rounded-full bg-white text-[var(--color-text-secondary)] shadow-soft transition-all hover:-translate-y-0.5 hover:text-primary"
               title="Đăng nhập"
             >
               <span className="material-symbols-outlined">person</span>
@@ -133,7 +134,7 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-on-surface-variant hover:text-primary ml-2"
+            className="ml-2 flex h-11 w-11 items-center justify-center rounded-full bg-white text-[var(--color-text-secondary)] shadow-soft hover:text-primary md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -146,7 +147,7 @@ export function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-surface-bright border-t border-border-subtle shadow-lg py-4 px-4">
+        <div className="absolute left-4 right-4 top-full rounded-[var(--radius-md)] border border-[var(--color-border)] bg-white px-4 py-4 shadow-card md:hidden">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link
@@ -165,3 +166,5 @@ export function Header() {
 }
 
 export default Header;
+
+

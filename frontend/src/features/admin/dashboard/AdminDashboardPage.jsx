@@ -265,7 +265,7 @@ export function AdminDashboardPage() {
                     <td className="px-8 py-5">
                       <div className="flex items-center gap-3">
                         <div
-                          className={`flex h-8 w-8 items-center justify-center rounded-full bg-${getInitialColor(index)}/10 font-bold text-xs text-${getInitialColor(index)}`}
+                          className={`flex h-8 w-8 items-center justify-center rounded-full bg-${getInitialColor(index)}/10 font-bold text-sm text-${getInitialColor(index)}`}
                         >
                           {order.initials}
                         </div>

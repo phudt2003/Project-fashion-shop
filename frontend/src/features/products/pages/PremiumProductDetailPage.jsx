@@ -31,9 +31,9 @@ const PRODUCT_DATABASE = {
     ],
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [
-      { hex: '#8C4A2D', name: 'Terracotta' },
-      { hex: '#D6E4D8', name: 'Sage' },
-      { hex: '#F2ECE6', name: 'Cream' },
+      { hex: '#F9A8D4', name: 'Terracotta' },
+      { hex: '#DCFCE7', name: 'Sage' },
+      { hex: '#FFFFFF', name: 'Cream' },
     ],
     labels: ['100% Organic Cotton', 'Thủ công', 'Bền vững'],
     categoryName: 'Bé gái',
@@ -64,8 +64,8 @@ const PRODUCT_DATABASE = {
     ],
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [
-      { hex: '#D6E4D8', name: 'Sage Green' },
-      { hex: '#F2ECE6', name: 'Sand' },
+      { hex: '#DCFCE7', name: 'Sage Green' },
+      { hex: '#FFFFFF', name: 'Sand' },
     ],
     labels: ['100% Organic Cotton', 'Ethical', 'Linen Shorts'],
     categoryName: 'Bé trai',
@@ -105,7 +105,7 @@ const PRODUCT_DATABASE = {
     storyImage: `${STITCH_ASSET_PATH}/story-hands.jpg`,
     gallery: [{ src: `${STITCH_ASSET_PATH}/overall-sage.jpg`, alt: 'Yếm linen xanh sage cho bé' }],
     sizes: ['S', 'M', 'L', 'XL'],
-    colors: [{ hex: '#D6E4D8', name: 'Sage' }],
+    colors: [{ hex: '#DCFCE7', name: 'Sage' }],
     labels: ['Linen', 'Nút gỗ', 'Thoáng nhẹ'],
     categoryName: 'Bé gái',
     categoryLink: '/categories/do-be-gai',
@@ -121,7 +121,7 @@ const PRODUCT_DATABASE = {
     storyImage: `${STITCH_ASSET_PATH}/story-hands.jpg`,
     gallery: [{ src: `${STITCH_ASSET_PATH}/skirt-dusty-rose.jpg`, alt: 'Set chân váy dusty rose cho bé' }],
     sizes: ['S', 'M', 'L', 'XL'],
-    colors: [{ hex: '#B97B78', name: 'Dusty Rose' }],
+    colors: [{ hex: '#F9A8D4', name: 'Dusty Rose' }],
     labels: ['Cotton', 'Dễ phối', 'Dịu da'],
     categoryName: 'Bé gái',
     categoryLink: '/categories/do-be-gai',
@@ -137,7 +137,7 @@ const PRODUCT_DATABASE = {
     storyImage: `${STITCH_ASSET_PATH}/story-hands.jpg`,
     gallery: [{ src: `${STITCH_ASSET_PATH}/merino-sweater.jpg`, alt: 'Áo len merino màu kem cho bé' }],
     sizes: ['S', 'M', 'L', 'XL'],
-    colors: [{ hex: '#F2ECE6', name: 'Cream' }],
+    colors: [{ hex: '#FFFFFF', name: 'Cream' }],
     labels: ['Merino Wool', 'Ấm nhẹ', 'Mềm mại'],
     categoryName: 'Bé gái',
     categoryLink: '/categories/do-be-gai',
@@ -237,7 +237,7 @@ export function ProductDetailPage() {
 
       <section className="grid grid-cols-1 items-start gap-12 md:grid-cols-12 md:gap-16">
         <div className="md:col-span-7">
-          <div className="overflow-hidden rounded-lg bg-cream-warm aspect-[4/5]">
+          <div className="overflow-hidden rounded-[var(--radius-md)] bg-cream-warm aspect-[4/5]">
             <img
               className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
               src={selectedImage.src}
@@ -253,7 +253,7 @@ export function ProductDetailPage() {
                   key={image.src}
                   type="button"
                   onClick={() => setSelectedImage(image)}
-                  className={`overflow-hidden rounded-lg border bg-cream-warm aspect-square transition ${
+                  className={`overflow-hidden rounded-[var(--radius-md)] border bg-cream-warm aspect-square transition ${
                     isActive ? 'border-primary ring-2 ring-primary/30' : 'border-border-subtle hover:border-primary'
                   }`}
                   aria-label={`Xem ảnh ${image.alt}`}
@@ -344,14 +344,14 @@ export function ProductDetailPage() {
             <button
               type="button"
               onClick={handleAddToCart}
-              className="h-16 w-full rounded-full bg-primary font-label-uppercase text-label-uppercase font-bold text-on-primary shadow-lg shadow-primary/10 transition hover:bg-clay-dark active:scale-95"
+              className="h-16 w-full rounded-full bg-primary font-label-uppercase text-label-uppercase font-bold text-on-primary shadow-lg shadow-primary/10 transition hover:bg-secondary hover:text-[var(--badge-sale-text)] active:scale-95"
             >
               Thêm vào giỏ hàng
             </button>
             <button
               type="button"
               onClick={handleAddToCart}
-              className="h-16 w-full rounded-full border border-ink-light font-label-uppercase text-label-uppercase font-bold text-on-surface transition hover:bg-on-surface hover:text-white active:scale-95"
+              className="h-16 w-full rounded-full border border-ink-light font-label-uppercase text-label-uppercase font-bold text-on-surface transition hover:bg-primary hover:text-on-primary active:scale-95"
             >
               Mua ngay
             </button>
@@ -446,7 +446,7 @@ export function ProductDetailPage() {
               )}
             </div>
           </div>
-          <div className="overflow-hidden rounded-lg bg-cream-warm aspect-[4/3]">
+          <div className="overflow-hidden rounded-[var(--radius-md)] bg-cream-warm aspect-[4/3]">
             <img className="h-full w-full object-cover" src={product.storyImage} alt="Nghệ nhân may trang phục organic" />
           </div>
         </div>
@@ -466,7 +466,7 @@ export function ProductDetailPage() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
           {RECOMMENDATIONS.map((recommendation) => (
             <Link key={recommendation.id} to={`/products/${recommendation.id}`} className="group block">
-              <div className="overflow-hidden rounded-lg bg-cream-warm aspect-[4/5]">
+              <div className="overflow-hidden rounded-[var(--radius-md)] bg-cream-warm aspect-[4/5]">
                 <img
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   src={recommendation.image}
@@ -486,3 +486,4 @@ export function ProductDetailPage() {
     </div>
   );
 }
+

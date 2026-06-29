@@ -57,7 +57,7 @@ export function AdminAnalyticsPage() {
           <div className="h-8 w-[1px] bg-outline-variant/30"></div>
           <div className="flex items-center gap-2 text-on-surface-variant">
             <span className="material-symbols-outlined text-sm">calendar_today</span>
-            <span className="font-label text-xs uppercase tracking-widest">Tháng 10, 2023</span>
+            <span className="font-label text-sm uppercase tracking-widest">Tháng 10, 2023</span>
           </div>
         </div>
         <div className="flex items-center gap-4">
@@ -82,20 +82,20 @@ export function AdminAnalyticsPage() {
         <div className="bg-surface-container-lowest p-6 rounded-2xl flex flex-col justify-between shadow-sm border border-outline-variant/10">
           <div>
             <div className="flex justify-between items-start mb-1">
-              <span className="font-label text-xs uppercase tracking-wider text-on-surface-variant">Doanh thu</span>
-              <span className="text-tertiary font-bold text-xs flex items-center">
-                <span className="material-symbols-outlined text-xs mr-1">trending_up</span>
+              <span className="font-label text-sm uppercase tracking-wider text-on-surface-variant">Doanh thu</span>
+              <span className="text-tertiary font-bold text-sm flex items-center">
+                <span className="material-symbols-outlined text-sm mr-1">trending_up</span>
                 +12.5%
               </span>
             </div>
             <h3 className="font-headline text-2xl font-bold">1.250.000.000đ</h3>
           </div>
           <div className="mt-4 flex items-end h-10 gap-1">
-            <div className="w-full bg-primary/20 h-4 rounded-sm"></div>
-            <div className="w-full bg-primary/20 h-6 rounded-sm"></div>
-            <div className="w-full bg-primary/20 h-3 rounded-sm"></div>
-            <div className="w-full bg-primary/20 h-8 rounded-sm"></div>
-            <div className="w-full bg-primary h-10 rounded-sm"></div>
+            <div className="w-full bg-primary/20 h-4 rounded-md"></div>
+            <div className="w-full bg-primary/20 h-6 rounded-md"></div>
+            <div className="w-full bg-primary/20 h-3 rounded-md"></div>
+            <div className="w-full bg-primary/20 h-8 rounded-md"></div>
+            <div className="w-full bg-primary h-10 rounded-md"></div>
           </div>
         </div>
 
@@ -103,20 +103,20 @@ export function AdminAnalyticsPage() {
         <div className="bg-surface-container-lowest p-6 rounded-2xl flex flex-col justify-between shadow-sm border border-outline-variant/10">
           <div>
             <div className="flex justify-between items-start mb-1">
-              <span className="font-label text-xs uppercase tracking-wider text-on-surface-variant">Đơn hàng</span>
-              <span className="text-error font-bold text-xs flex items-center">
-                <span className="material-symbols-outlined text-xs mr-1">trending_down</span>
+              <span className="font-label text-sm uppercase tracking-wider text-on-surface-variant">Đơn hàng</span>
+              <span className="text-error font-bold text-sm flex items-center">
+                <span className="material-symbols-outlined text-sm mr-1">trending_down</span>
                 -3.2%
               </span>
             </div>
             <h3 className="font-headline text-2xl font-bold">3,842</h3>
           </div>
           <div className="mt-4 flex items-end h-10 gap-1">
-            <div className="w-full bg-primary/10 h-8 rounded-sm"></div>
-            <div className="w-full bg-primary/10 h-5 rounded-sm"></div>
-            <div className="w-full bg-primary/10 h-7 rounded-sm"></div>
-            <div className="w-full bg-primary/10 h-10 rounded-sm"></div>
-            <div className="w-full bg-primary h-6 rounded-sm"></div>
+            <div className="w-full bg-primary/10 h-8 rounded-md"></div>
+            <div className="w-full bg-primary/10 h-5 rounded-md"></div>
+            <div className="w-full bg-primary/10 h-7 rounded-md"></div>
+            <div className="w-full bg-primary/10 h-10 rounded-md"></div>
+            <div className="w-full bg-primary h-6 rounded-md"></div>
           </div>
         </div>
 
@@ -124,20 +124,20 @@ export function AdminAnalyticsPage() {
         <div className="bg-surface-container-lowest p-6 rounded-2xl flex flex-col justify-between shadow-sm border border-outline-variant/10">
           <div>
             <div className="flex justify-between items-start mb-1">
-              <span className="font-label text-xs uppercase tracking-wider text-on-surface-variant">Giá trị TB/đơn</span>
-              <span className="text-tertiary font-bold text-xs flex items-center">
-                <span className="material-symbols-outlined text-xs mr-1">trending_up</span>
+              <span className="font-label text-sm uppercase tracking-wider text-on-surface-variant">Giá trị TB/đơn</span>
+              <span className="text-tertiary font-bold text-sm flex items-center">
+                <span className="material-symbols-outlined text-sm mr-1">trending_up</span>
                 +8.1%
               </span>
             </div>
             <h3 className="font-headline text-2xl font-bold">325.350đ</h3>
           </div>
           <div className="mt-4 flex items-end h-10 gap-1">
-            <div className="w-full bg-primary/20 h-3 rounded-sm"></div>
-            <div className="w-full bg-primary/20 h-4 rounded-sm"></div>
-            <div className="w-full bg-primary/20 h-6 rounded-sm"></div>
-            <div className="w-full bg-primary/20 h-9 rounded-sm"></div>
-            <div className="w-full bg-primary h-8 rounded-sm"></div>
+            <div className="w-full bg-primary/20 h-3 rounded-md"></div>
+            <div className="w-full bg-primary/20 h-4 rounded-md"></div>
+            <div className="w-full bg-primary/20 h-6 rounded-md"></div>
+            <div className="w-full bg-primary/20 h-9 rounded-md"></div>
+            <div className="w-full bg-primary h-8 rounded-md"></div>
           </div>
         </div>
 
@@ -145,20 +145,20 @@ export function AdminAnalyticsPage() {
         <div className="bg-surface-container-lowest p-6 rounded-2xl flex flex-col justify-between shadow-sm border border-outline-variant/10">
           <div>
             <div className="flex justify-between items-start mb-1">
-              <span className="font-label text-xs uppercase tracking-wider text-on-surface-variant">Khách hàng mới</span>
-              <span className="text-tertiary font-bold text-xs flex items-center">
-                <span className="material-symbols-outlined text-xs mr-1">trending_up</span>
+              <span className="font-label text-sm uppercase tracking-wider text-on-surface-variant">Khách hàng mới</span>
+              <span className="text-tertiary font-bold text-sm flex items-center">
+                <span className="material-symbols-outlined text-sm mr-1">trending_up</span>
                 +24%
               </span>
             </div>
             <h3 className="font-headline text-2xl font-bold">452</h3>
           </div>
           <div className="mt-4 flex items-end h-10 gap-1">
-            <div className="w-full bg-primary/20 h-5 rounded-sm"></div>
-            <div className="w-full bg-primary/20 h-8 rounded-sm"></div>
-            <div className="w-full bg-primary/20 h-4 rounded-sm"></div>
-            <div className="w-full bg-primary/20 h-6 rounded-sm"></div>
-            <div className="w-full bg-primary h-10 rounded-sm"></div>
+            <div className="w-full bg-primary/20 h-5 rounded-md"></div>
+            <div className="w-full bg-primary/20 h-8 rounded-md"></div>
+            <div className="w-full bg-primary/20 h-4 rounded-md"></div>
+            <div className="w-full bg-primary/20 h-6 rounded-md"></div>
+            <div className="w-full bg-primary h-10 rounded-md"></div>
           </div>
         </div>
       </div>
@@ -174,7 +174,7 @@ export function AdminAnalyticsPage() {
             </div>
             <div className="flex gap-2">
               <button
-                className={`px-3 py-1 rounded text-xs font-label ${
+                className={`px-3 py-1 rounded-lg text-sm font-label ${
                   timeFilter === 'week' ? 'bg-primary-container/10 text-primary' : 'text-on-surface-variant hover:bg-surface-container'
                 }`}
                 onClick={() => setTimeFilter('week')}
@@ -182,7 +182,7 @@ export function AdminAnalyticsPage() {
                 Theo tuần
               </button>
               <button
-                className={`px-3 py-1 rounded text-xs font-label ${
+                className={`px-3 py-1 rounded-lg text-sm font-label ${
                   timeFilter === 'month' ? 'bg-primary-container/10 text-primary' : 'text-on-surface-variant hover:bg-surface-container'
                 }`}
                 onClick={() => setTimeFilter('month')}
@@ -234,7 +234,7 @@ export function AdminAnalyticsPage() {
               <circle className="rotate-[162deg] origin-center" cx="96" cy="96" fill="transparent" r="80" stroke="#6d5e00" strokeDasharray="502" strokeDashoffset="350" strokeLinecap="round" strokeWidth="24"></circle>
             </svg>
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <span className="text-xs font-label text-on-surface-variant">Tổng</span>
+              <span className="text-sm font-label text-on-surface-variant">Tổng</span>
               <span className="text-xl font-bold">1.2B</span>
             </div>
           </div>
@@ -270,7 +270,7 @@ export function AdminAnalyticsPage() {
         <div className="bg-surface-container-lowest p-8 rounded-3xl shadow-sm border border-outline-variant/10">
           <div className="flex justify-between items-center mb-6">
             <h4 className="font-headline text-xl font-bold">Sản phẩm bán chạy</h4>
-            <a className="text-primary text-xs font-label hover:underline cursor-pointer" href="#">
+            <a className="text-primary text-sm font-label hover:underline cursor-pointer" href="#">
               Xem tất cả
             </a>
           </div>
@@ -292,8 +292,8 @@ export function AdminAnalyticsPage() {
                     </td>
                     <td className="py-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded bg-surface-container">
-                          <img className="w-full h-full object-cover rounded" src={product.image} alt={product.name} />
+                        <div className="w-8 h-8 rounded-lg bg-surface-container">
+                          <img className="w-full h-full object-cover rounded-lg" src={product.image} alt={product.name} />
                         </div>
                         <div>
                           <p className="font-medium">{product.name}</p>
@@ -324,13 +324,13 @@ export function AdminAnalyticsPage() {
               </div>
               <div className="flex-1 space-y-4">
                 <div className="flex flex-col">
-                  <span className="text-xs font-label text-on-surface-variant uppercase tracking-wider">Khách hàng mới</span>
+                  <span className="text-sm font-label text-on-surface-variant uppercase tracking-wider">Khách hàng mới</span>
                   <span className="text-xl font-bold text-primary">
                     65% <span className="text-[10px] text-tertiary font-normal ml-2">+12%</span>
                   </span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-xs font-label text-on-surface-variant uppercase tracking-wider">Khách hàng cũ</span>
+                  <span className="text-sm font-label text-on-surface-variant uppercase tracking-wider">Khách hàng cũ</span>
                   <span className="text-xl font-bold">
                     35% <span className="text-[10px] text-error font-normal ml-2">-2%</span>
                   </span>

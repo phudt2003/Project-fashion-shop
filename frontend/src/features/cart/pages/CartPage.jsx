@@ -142,7 +142,7 @@ export function CartPage() {
     <main className="pt-24 pb-20 max-w-container-max mx-auto px-6 md:px-16 bg-background">
       {/* Success Modal */}
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/25 backdrop-blur-sm p-4">
           <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl text-center space-y-6 animate-fade-in border border-border-subtle">
             <span className="material-symbols-outlined text-primary text-6xl">check_circle</span>
             <h3 className="font-display text-headline-md text-on-surface">Đặt hàng thành công!</h3>
@@ -155,7 +155,7 @@ export function CartPage() {
                   setShowModal(false);
                   navigate('/orders');
                 }}
-                className="w-full bg-primary text-on-primary py-4 rounded-full font-label-uppercase text-label-uppercase font-bold hover:bg-clay-dark transition"
+                className="w-full bg-primary text-on-primary py-4 rounded-full font-label-uppercase text-label-uppercase font-bold hover:bg-secondary hover:text-[var(--badge-sale-text)] transition"
               >
                 Xem lịch sử đơn hàng
               </button>
@@ -192,7 +192,7 @@ export function CartPage() {
           </p>
           <Link
             to="/products"
-            className="bg-primary text-white font-label-uppercase text-label-uppercase py-4 px-10 rounded-full hover:bg-clay-dark transition font-bold shadow-lg shadow-primary/10"
+            className="bg-primary text-white font-label-uppercase text-label-uppercase py-4 px-10 rounded-full hover:bg-secondary hover:text-[var(--badge-sale-text)] transition font-bold shadow-lg shadow-primary/10"
           >
             Tiếp tục mua sắm
           </Link>
@@ -207,7 +207,7 @@ export function CartPage() {
                   key={item.cartId}
                   className="group flex flex-col md:flex-row gap-6 pb-6 border-b border-border-subtle last:border-b-0 last:pb-0"
                 >
-                  <div className="w-full md:w-28 aspect-[3/4] overflow-hidden rounded-lg bg-surface-container shrink-0">
+                  <div className="w-full md:w-28 aspect-[3/4] overflow-hidden rounded-[var(--radius-md)] bg-surface-container shrink-0">
                     <img
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       src={item.image}
@@ -395,7 +395,7 @@ export function CartPage() {
                 type="button"
                 onClick={handleCheckout}
                 disabled={isSubmitting}
-                className="w-full mt-4 bg-on-surface text-background font-label-uppercase text-label-uppercase py-5 rounded-full hover:bg-clay-dark transition-all duration-300 transform hover:-translate-y-1 font-bold disabled:opacity-50"
+                className="w-full mt-4 bg-primary text-on-primary font-label-uppercase text-label-uppercase py-5 rounded-full hover:bg-secondary hover:text-[var(--badge-sale-text)] transition-all duration-300 transform hover:-translate-y-1 font-bold disabled:opacity-50"
               >
                 {isSubmitting ? 'ĐANG XỬ LÝ...' : 'Thanh toán ngay'}
               </button>
@@ -433,7 +433,7 @@ export function CartPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-grid-gutter">
           {UPSELL_PRODUCTS.map((prod) => (
             <Link to={`/products/${prod.id}`} className="group block cursor-pointer" key={prod.id}>
-              <div className="aspect-[3/4] overflow-hidden rounded-lg bg-surface-container relative mb-4">
+              <div className="aspect-[3/4] overflow-hidden rounded-[var(--radius-md)] bg-surface-container relative mb-4">
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   src={prod.image}
@@ -451,3 +451,5 @@ export function CartPage() {
     </main>
   );
 }
+
+

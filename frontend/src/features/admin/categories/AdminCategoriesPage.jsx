@@ -107,10 +107,10 @@ export function AdminCategoriesPage() {
                     </span>
                     <span className={`flex-1 ${category.active ? 'font-bold' : 'font-medium'}`}>{category.name}</span>
                     <div className={`flex gap-1 ${category.active ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} transition-opacity`}>
-                      <button className="p-1 hover:bg-surface-variant rounded">
+                      <button className="p-1 hover:bg-surface-variant rounded-lg">
                         <span className="material-symbols-outlined text-sm">edit</span>
                       </button>
-                      <button className="p-1 hover:bg-error-container text-error rounded">
+                      <button className="p-1 hover:bg-error-container text-error rounded-lg">
                         <span className="material-symbols-outlined text-sm">delete</span>
                       </button>
                     </div>

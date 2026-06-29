@@ -2,63 +2,64 @@ import { Link } from 'react-router-dom';
 
 export function Footer() {
   return (
-    <footer className="bg-surface-container-low dark:bg-surface-container-lowest w-full pt-section-gap-desktop pb-section-gap-mobile border-t border-border-subtle mt-auto">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-grid-gutter px-grid-gutter max-w-container-max mx-auto">
+    <footer className="mt-auto w-full border-t border-[var(--color-border)] bg-[linear-gradient(135deg,var(--color-primary-soft),#FFFFFF_45%,var(--color-secondary-soft))] pt-12 pb-6">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 md:grid-cols-12 md:px-6">
         <div className="md:col-span-4">
-          <h2 className="font-display text-headline-lg text-primary mb-6">STITCH</h2>
-          <p className="text-secondary max-w-xs mb-8">Nơi hội tụ của nghệ thuật may mặc thủ công và tâm hồn yêu thiên nhiên.</p>
-          <div className="flex gap-4">
-            <a className="w-10 h-10 rounded-full border border-border-subtle flex items-center justify-center text-secondary hover:text-primary hover:border-primary transition-all" href="#">
-              <span className="material-symbols-outlined">face_nod</span>
-            </a>
-            <a className="w-10 h-10 rounded-full border border-border-subtle flex items-center justify-center text-secondary hover:text-primary hover:border-primary transition-all" href="#">
-              <span className="material-symbols-outlined">camera</span>
-            </a>
-            <a className="w-10 h-10 rounded-full border border-border-subtle flex items-center justify-center text-secondary hover:text-primary hover:border-primary transition-all" href="#">
-              <span className="material-symbols-outlined">share</span>
-            </a>
+          <h2 className="mb-4 font-display text-[var(--text-2xl)] font-extrabold text-primary">STITCH Kids</h2>
+          <p className="mb-6 max-w-xs text-base leading-relaxed text-[var(--color-text-secondary)]">
+            Trang phục trẻ em mềm mại, an toàn và đủ đáng yêu cho những ngày bé tự do khám phá.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {['local_shipping', 'verified', 'favorite'].map((icon) => (
+              <a
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-border)] bg-white text-primary shadow-soft transition-all hover:-translate-y-0.5 hover:bg-primary hover:text-white"
+                href="#"
+                key={icon}
+              >
+                <span className="material-symbols-outlined">{icon}</span>
+              </a>
+            ))}
           </div>
         </div>
         
-        <div className="md:col-span-2 space-y-4">
-          <h4 className="font-label-uppercase text-label-uppercase text-on-surface mb-6">MUA SẮM</h4>
-          <Link className="block text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all" to="/products">Tất cả sản phẩm</Link>
-          <Link className="block text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all" to="/categories/do-be-trai">Bé trai</Link>
-          <Link className="block text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all" to="/categories/do-be-gai">Đồ bé gái</Link>
-
-          <Link className="block text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all" to="/categories/footwear">Giày dép</Link>
+        <div className="space-y-3 md:col-span-2">
+          <h4 className="mb-5 font-body text-sm font-extrabold uppercase text-[var(--color-text-accent)]">Mua sắm</h4>
+          <Link className="block text-sm font-semibold text-[var(--color-text-secondary)] transition-all hover:translate-x-1 hover:text-primary" to="/products">Tất cả sản phẩm</Link>
+          <Link className="block text-sm font-semibold text-[var(--color-text-secondary)] transition-all hover:translate-x-1 hover:text-primary" to="/categories/do-be-trai">Bé trai</Link>
+          <Link className="block text-sm font-semibold text-[var(--color-text-secondary)] transition-all hover:translate-x-1 hover:text-primary" to="/categories/do-be-gai">Bé gái</Link>
+          <Link className="block text-sm font-semibold text-[var(--color-text-secondary)] transition-all hover:translate-x-1 hover:text-primary" to="/categories/footwear">Giày dép</Link>
         </div>
         
-        <div className="md:col-span-3 space-y-4">
-          <h4 className="font-label-uppercase text-label-uppercase text-on-surface mb-6">HỖ TRỢ</h4>
-          <a className="block text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all" href="#">Chính sách vận chuyển</a>
-          <a className="block text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all" href="#">Đổi trả & Hoàn tiền</a>
-          <a className="block text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all" href="#">Hướng dẫn chọn size</a>
-          <a className="block text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all" href="#">Chính sách bảo mật</a>
+        <div className="space-y-3 md:col-span-3">
+          <h4 className="mb-5 font-body text-sm font-extrabold uppercase text-[var(--color-text-accent)]">Hỗ trợ phụ huynh</h4>
+          <a className="block text-sm font-semibold text-[var(--color-text-secondary)] transition-all hover:translate-x-1 hover:text-primary" href="#">Chính sách vận chuyển</a>
+          <a className="block text-sm font-semibold text-[var(--color-text-secondary)] transition-all hover:translate-x-1 hover:text-primary" href="#">Đổi trả & hoàn tiền</a>
+          <a className="block text-sm font-semibold text-[var(--color-text-secondary)] transition-all hover:translate-x-1 hover:text-primary" href="#">Hướng dẫn chọn size</a>
+          <a className="block text-sm font-semibold text-[var(--color-text-secondary)] transition-all hover:translate-x-1 hover:text-primary" href="#">Chính sách bảo mật</a>
         </div>
         
-        <div className="md:col-span-3 space-y-4">
-          <h4 className="font-label-uppercase text-label-uppercase text-on-surface mb-6">LIÊN HỆ</h4>
-          <p className="text-on-surface-variant flex items-start gap-2">
-            <span className="material-symbols-outlined text-[18px]">location_on</span>
+        <div className="space-y-3 md:col-span-3">
+          <h4 className="mb-5 font-body text-sm font-extrabold uppercase text-[var(--color-text-accent)]">Liên hệ</h4>
+          <p className="flex items-start gap-2 text-sm font-semibold text-[var(--color-text-secondary)]">
+            <span className="material-symbols-outlined text-[18px] text-primary">location_on</span>
             <span>28 Thảo Điền, Quận 2, TP. Hồ Chí Minh</span>
           </p>
-          <p className="text-on-surface-variant flex items-center gap-2">
-            <span className="material-symbols-outlined text-[18px]">mail</span>
+          <p className="flex items-center gap-2 text-sm font-semibold text-[var(--color-text-secondary)]">
+            <span className="material-symbols-outlined text-[18px] text-primary">mail</span>
             <span>hello@stitchatelier.vn</span>
           </p>
-          <p className="text-on-surface-variant flex items-center gap-2">
-            <span className="material-symbols-outlined text-[18px]">call</span>
+          <p className="flex items-center gap-2 text-sm font-semibold text-[var(--color-text-secondary)]">
+            <span className="material-symbols-outlined text-[18px] text-primary">call</span>
             <span>+84 (0) 901 234 567</span>
           </p>
         </div>
       </div>
       
-      <div className="max-w-container-max mx-auto px-grid-gutter mt-section-gap-desktop pt-8 border-t border-border-subtle flex flex-col md:flex-row justify-between items-center gap-4 text-center">
-        <span className="text-caption text-secondary">© 2024 STITCH SUSTAINABLE ATELIER. BẢO LƯU MỌI QUYỀN.</span>
-        <div className="flex gap-6">
-          <a className="text-caption text-secondary hover:text-primary transition-colors" href="#">Báo cáo Phát triển Bền vững</a>
-          <a className="text-caption text-secondary hover:text-primary transition-colors" href="#">Hướng dẫn Chăm sóc sản phẩm</a>
+      <div className="mx-auto mt-10 flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-[var(--color-border)] px-4 pt-6 text-center md:flex-row md:px-6">
+        <span className="text-sm font-semibold text-[var(--color-text-muted)]">© 2026 STITCH Kids. Bảo lưu mọi quyền.</span>
+        <div className="flex flex-wrap justify-center gap-4">
+          <a className="text-sm font-semibold text-[var(--color-text-muted)] transition-colors hover:text-primary" href="#">Báo cáo bền vững</a>
+          <a className="text-sm font-semibold text-[var(--color-text-muted)] transition-colors hover:text-primary" href="#">Chăm sóc sản phẩm</a>
         </div>
       </div>
     </footer>
