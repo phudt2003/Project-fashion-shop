@@ -72,7 +72,7 @@ export function CartPage() {
   };
 
   const handleApplyCoupon = () => {
-    if (couponCode.trim().toUpperCase() === 'STITCH10') {
+    if (couponCode.trim().toUpperCase() === 'KYNGUYEN10') {
       setDiscountPercent(10);
       setCouponApplied(true);
       setErrors((prev) => ({ ...prev, coupon: null }));
@@ -147,13 +147,13 @@ export function CartPage() {
             <span className="material-symbols-outlined text-primary text-6xl">check_circle</span>
             <h3 className="font-display text-headline-md text-on-surface">Đặt hàng thành công!</h3>
             <p className="text-secondary text-body-md leading-relaxed">
-              Cảm ơn bạn đã lựa chọn STITCH. Đơn hàng của bạn đã được tiếp nhận và đang được xử lý.
+              Cảm ơn bạn đã lựa chọn KỶ NGUYÊN KID. Đơn hàng của bạn đã được tiếp nhận và đang được xử lý.
             </p>
             <div className="pt-4">
               <button
                 onClick={() => {
                   setShowModal(false);
-                  navigate('/orders');
+                  navigate('/don-hang');
                 }}
                 className="w-full bg-primary text-on-primary py-4 rounded-full font-label-uppercase text-label-uppercase font-bold hover:bg-secondary hover:text-[var(--badge-sale-text)] transition"
               >
@@ -364,7 +364,7 @@ export function CartPage() {
 
               <div>
                 <label className="font-label-uppercase text-caption text-secondary block mb-2 font-bold" htmlFor="discount">
-                  Mã giảm giá (Nhập: STITCH10)
+                  Mã giảm giá (Nhập: KYNGUYEN10)
                 </label>
                 <div className="flex gap-2">
                   <input

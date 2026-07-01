@@ -104,7 +104,7 @@ export function SalePage() {
           Khuyến mãi
         </h1>
         <p className="font-body text-base leading-loose text-[var(--color-text-secondary)] max-w-2xl mx-auto">
-          Tại Stitch, chúng tôi tin rằng thời trang cao cấp cho trẻ em không nên gây tổn hại đến hành tinh. Các chương trình ưu đãi của chúng tôi giúp những sản phẩm làm từ sợi hữu cơ và vật liệu tái chế trở nên dễ dàng tiếp cận hơn, giúp bạn xây dựng tủ đồ bền vững cho bé một cách có trách nhiệm.
+          Tại KỶ NGUYÊN KID, chúng tôi tin rằng thời trang cao cấp cho trẻ em không nên gây tổn hại đến hành tinh. Các chương trình ưu đãi của chúng tôi giúp những sản phẩm làm từ sợi hữu cơ và vật liệu tái chế trở nên dễ dàng tiếp cận hơn, giúp bạn xây dựng tủ đồ bền vững cho bé một cách có trách nhiệm.
         </p>
       </section>
 
@@ -206,7 +206,7 @@ export function SalePage() {
             Nhận tin ưu đãi sớm nhất
           </h2>
           <p className="font-body text-base leading-relaxed text-[var(--color-text-secondary)] mb-8">
-            Tham gia cộng đồng Stitch để nhận thông tin về các bộ sưu tập mới và các chương trình ưu đãi dành riêng cho thành viên.
+            Tham gia cộng đồng KỶ NGUYÊN KID để nhận thông tin về các bộ sưu tập mới và các chương trình ưu đãi dành riêng cho thành viên.
           </p>
           <form className="flex flex-col sm:flex-row gap-4">
             <input

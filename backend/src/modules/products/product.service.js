@@ -32,6 +32,12 @@ export const productService = {
     return product;
   },
 
+  getById: async (id) => {
+    const product = await Product.findById(id);
+    if (!product) throw new ApiError(404, 'Product not found');
+    return product;
+  },
+
   create: (payload) => Product.create(payload),
 
   update: async (id, payload) => {

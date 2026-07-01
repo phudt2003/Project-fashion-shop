@@ -24,7 +24,7 @@ export function ProfilePage() {
   }
 
   const email = user.primaryEmailAddress?.emailAddress || user.emailAddresses[0]?.emailAddress || 'Chưa cung cấp';
-  const fullName = user.fullName || `${user.firstName || ''} ${user.lastName || ''}`.trim() || 'Người dùng Stitch';
+  const fullName = user.fullName || `${user.firstName || ''} ${user.lastName || ''}`.trim() || 'Người dùng KỶ NGUYÊN KID';
   const role = userWithRole?.role || user?.publicMetadata?.role || USER_ROLES.USER;
   const isAdmin = role === USER_ROLES.ADMIN;
 
@@ -46,7 +46,7 @@ export function ProfilePage() {
               {fullName}
             </h3>
             <p className="font-body text-sm text-[var(--color-text-secondary)] mb-2">
-              Thành viên của Stitch
+              Thành viên của KỶ NGUYÊN KID
             </p>
             <span className={`inline-block px-3 py-1 rounded-full font-body text-sm font-medium ${
               isAdmin 

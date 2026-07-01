@@ -308,7 +308,7 @@ export function OrderHistoryPage() {
                     <span className="text-[var(--color-text-primary)]">0₫</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-[var(--color-text-secondary)]">Giảm giá (STITCH20)</span>
+                    <span className="text-[var(--color-text-secondary)]">Giảm giá (KYNGUYEN20)</span>
                     <span className="text-[var(--color-error)]">-850,000₫</span>
                   </div>
                   <div className="flex justify-between pt-4 border-t border-[var(--color-border)]">

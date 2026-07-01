@@ -20,7 +20,9 @@ productRoutes.use(requireAuth);
 productRoutes.use(unifiedAuthMiddleware);
 productRoutes.use(adminMiddleware);
 
+// Upload ảnh đơn lẻ — POST /api/v1/products/upload
+productRoutes.post('/upload', upload.single('image'), productController.uploadImage);
+
 productRoutes.post('/', upload.array('images', 8), validate(productCreateSchema), productController.create);
 productRoutes.patch('/:productId', upload.array('images', 8), productController.update);
 productRoutes.delete('/:productId', productController.remove);
-

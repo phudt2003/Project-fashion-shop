@@ -20,25 +20,25 @@ export function AdminLayout() {
   const fullName = user?.fullName || `${user?.firstName || ''} ${user?.lastName || ''}`.trim() || 'Admin User';
 
   return (
-    <div className="min-h-screen bg-background text-on-surface font-body-md overflow-x-hidden">
+    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans overflow-x-hidden">
       {/* Mobile Sidebar Overlay */}
       {isSidebarOpen && (
         <div
-          className="fixed inset-0 bg-primary/25 z-[65] md:hidden"
+          className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[65] md:hidden transition-opacity duration-300"
           onClick={() => setIsSidebarOpen(false)}
         />
       )}
 
       {/* Side Navigation Shell */}
-      <aside className={`fixed left-0 top-0 z-[60] flex h-screen flex-col border-r border-outline-variant bg-surface-container-lowest py-container_padding shadow-[0_4px_20px_rgba(0,0,0,0.04)] transition-transform duration-300 ${
+      <aside className={`fixed left-0 top-0 z-[60] flex h-screen w-[280px] flex-col border-r border-slate-100 bg-white py-6 shadow-sm transition-transform duration-300 ${
         isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
-      } md:translate-x-0 md:w-sidebar_width w-72`}>
+      } md:translate-x-0`}>
         <div className="mb-8 px-6">
-          <h1 className="font-headline-md text-headline-md font-bold text-primary">KidsFashion Admin</h1>
-          <p className="font-body-sm text-on-surface-variant">Management Portal</p>
+          <h1 className="font-display text-xl font-bold text-sky-500 tracking-tight">KidsFashion Admin</h1>
+          <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-0.5">Management Portal</p>
         </div>
         
-        <nav className="flex-1 space-y-1 overflow-y-auto px-4 custom-scrollbar">
+        <nav className="flex-1 space-y-1 overflow-y-auto pr-3 pl-0 custom-scrollbar">
           {navLinks.map((link) => (
             <NavLink
               key={link.path}
@@ -46,72 +46,69 @@ export function AdminLayout() {
               end
               onClick={() => setIsSidebarOpen(false)}
               className={({ isActive }) =>
-                `flex items-center gap-3 rounded-xl px-4 py-3 transition-colors ${
+                `flex items-center gap-3 py-3 pl-6 pr-4 transition-all border-l-4 ${
                   isActive
-                    ? 'bg-surface-container-low font-bold text-primary'
-                    : 'text-on-surface-variant hover:bg-surface-container-low active:scale-95'
+                    ? 'bg-sky-50 border-sky-500 font-bold text-sky-600 rounded-r-xl'
+                    : 'border-transparent text-slate-600 hover:bg-slate-50 hover:text-slate-800 hover:pl-7'
                 }`
               }
             >
-              <span className="material-symbols-outlined" style={{ fontVariationSettings: 'FILL 1' }}>
+              <span className="material-symbols-outlined text-[22px]" style={{ fontVariationSettings: 'FILL 1' }}>
                 {link.icon}
               </span>
-              <span className="font-body-md">{link.label}</span>
+              <span className="text-sm font-semibold">{link.label}</span>
             </NavLink>
           ))}
         </nav>
-
-        {/* ĐÃ XÓA KHỐI ADMIN LỖI Ở GÓC DƯỚI NÀY */}
       </aside>
 
       {/* Main Content Canvas */}
-      <main className={`min-h-screen transition-all duration-300 ${isSidebarOpen ? 'md:ml-sidebar_width ml-0' : 'md:ml-sidebar_width ml-0'}`}>
+      <main className="min-h-screen transition-all duration-300 md:ml-[280px] ml-0 flex flex-col">
         {/* Top Bar Shell */}
-        <header className="sticky top-0 z-50 flex h-row_height w-full items-center justify-between bg-surface px-container_padding transition-all">
+        <header className="sticky top-0 z-50 flex h-16 w-full items-center justify-between bg-white border-b border-slate-100 px-6 shadow-sm">
           <div className="flex items-center gap-4 flex-1">
             {/* Mobile Menu Toggle */}
             <button
-              className="md:hidden text-on-surface-variant hover:text-primary"
+              className="md:hidden text-slate-500 hover:text-sky-500 transition-colors flex items-center justify-center p-1"
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
               aria-label="Toggle sidebar"
             >
-              <span className="material-symbols-outlined">menu</span>
+              <span className="material-symbols-outlined text-[24px]">menu</span>
             </button>
             
-            <div className="flex flex-1 items-center rounded-full bg-surface-container-low px-4 py-2 max-w-md">
-              <span className="material-symbols-outlined text-outline">search</span>
+            <div className="flex flex-1 items-center rounded-xl bg-slate-50 border border-slate-100 px-4 py-2 max-w-md focus-within:border-sky-500 focus-within:ring-2 focus-within:ring-sky-500/10 transition-all">
+              <span className="material-symbols-outlined text-slate-400 text-[20px]">search</span>
               <input
-                className="ml-2 w-full border-none bg-transparent text-body-sm focus:ring-0"
+                className="ml-2 w-full border-none bg-transparent text-xs text-slate-800 placeholder:text-slate-400 outline-none focus:ring-0"
                 placeholder="Tìm kiếm đơn hàng, sản phẩm..."
                 type="text"
               />
             </div>
           </div>
           
-          {/* Góc phải Header: Đã dồn toàn bộ cụm thông báo và nút Clerk UserButton */}
+          {/* Góc phải Header */}
           <div className="flex items-center gap-4">
-            <button className="relative cursor-pointer rounded-full p-2 text-on-surface-variant transition-all hover:bg-surface-container-high">
-              <span className="material-symbols-outlined">notifications</span>
-              <span className="absolute right-1 top-1 h-2 w-2 rounded-full border-2 border-surface bg-primary"></span>
+            <button className="relative cursor-pointer rounded-full p-2 text-slate-500 transition-all hover:bg-slate-50 hover:text-sky-500 flex items-center justify-center">
+              <span className="material-symbols-outlined text-[24px]">notifications</span>
+              <span className="absolute right-2 top-2 h-2 w-2 rounded-full border-2 border-white bg-sky-500"></span>
             </button>
             
-            {/* Khối User Profile điều khiển bằng Clerk */}
-            <div className="flex items-center gap-3 pl-3 border-l border-outline-variant">
+            {/* Khối User Profile */}
+            <div className="flex items-center gap-3 pl-3 border-l border-slate-100 h-8">
               <div className="hidden sm:block text-right">
-                <span className="block title-sm font-title-sm text-primary font-semibold leading-none mb-1">
+                <span className="block text-sm text-slate-800 font-bold leading-none mb-0.5">
                   {fullName}
                 </span>
-                <span className="block text-[11px] text-on-surface-variant leading-none">
-                  Administrator
+                <span className="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider leading-none">
+                  Admin
                 </span>
               </div>
               
-              {/* Nút bấm Avatar của Clerk, khi nhấn vào tự hiện bảng thông tin & nút Đăng xuất */}
               <UserButton 
                 afterSignOutUrl="/" 
                 appearance={{ 
                   elements: { 
-                    avatarBox: "h-9 w-9 rounded-xl border border-primary/10 shadow-sm" 
+                    avatarBox: "h-9 w-9 rounded-xl border border-slate-100 shadow-sm" 
                   } 
                 }} 
               />
@@ -120,17 +117,10 @@ export function AdminLayout() {
         </header>
 
         {/* Content Area */}
-        <div className="p-container_padding">
+        <div className="p-6 md:p-8 flex-1">
           <Outlet />
         </div>
       </main>
-
-      {/* Floating Action Button */}
-      <button className="fixed bottom-8 right-8 z-[70] flex h-14 w-14 items-center justify-center rounded-full bg-primary text-on-primary shadow-lg shadow-primary/40 transition-all hover:scale-110 active:scale-95 group">
-        <span className="material-symbols-outlined text-[28px] transition-transform duration-300 group-hover:rotate-90">
-          add
-        </span>
-      </button>
     </div>
   );
 }

@@ -13,7 +13,7 @@ export function CustomerLayout() {
   return (
     <div className="min-h-screen flex flex-col bg-surface-bright text-on-background">
       <Header />
-      <main className="pt-[72px] flex-grow">
+      <main className={`${pathname === '/' || pathname === '/categories/so-sinh' || pathname === '/khuyen-mai' || pathname === '/products' || pathname.startsWith('/categories/') ? 'pt-0' : 'pt-[72px] md:pt-[100px]'} flex-grow`}>
         <Outlet />
       </main>
       <Footer />

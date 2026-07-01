@@ -1,4 +1,16 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import {
+  AdminPageHeader,
+  AdminCard,
+  AdminButton,
+  AdminInput,
+  AdminBadge,
+  AdminTable,
+  AdminTableRow,
+  AdminTableCell,
+  AdminPagination,
+  AdminKPICard
+} from '../../../components/admin';
 
 const mockCustomers = [
   {
@@ -108,6 +120,20 @@ export function AdminUsersPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [hoveredRow, setHoveredRow] = useState(null);
 
+  const breadcrumbs = [
+    { label: 'Khách hàng' }
+  ];
+
+  const tableHeaders = [
+    { label: 'Khách hàng' },
+    { label: 'Số điện thoại' },
+    { label: 'Email' },
+    { label: 'Đơn hàng', align: 'center' },
+    { label: 'Tổng chi tiêu', align: 'right' },
+    { label: 'Ngày đăng ký' },
+    { label: 'Thao tác', align: 'center' }
+  ];
+
   const formatPrice = (price) => {
     return new Intl.NumberFormat('vi-VN', {
       style: 'currency',
@@ -131,206 +157,136 @@ export function AdminUsersPage() {
     return matchesSearch;
   });
 
-  const itemsPerPage = 10;
+  const itemsPerPage = 5;
   const totalPages = Math.ceil(filteredCustomers.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentCustomers = filteredCustomers.slice(startIndex, endIndex);
 
   return (
-    <div>
+    <div className="flex flex-col gap-6">
       {/* Header Section */}
-      <div className="flex justify-between items-end mb-8">
-        <div>
-          <h2 className="font-display-lg text-display-lg text-on-surface mb-2">Quản lý Khách hàng</h2>
-          <p className="text-body-md text-on-surface-variant">Quản lý và xem thông tin chi tiết các khách hàng trong hệ thống</p>
-        </div>
-        <button className="flex items-center gap-2 bg-primary text-on-primary px-6 py-2.5 rounded-lg hover:bg-primary-container hover:shadow-lg transition-all active:scale-95 font-body-md">
+      <AdminPageHeader
+        title="Quản lý Khách hàng"
+        subtitle="Quản lý và xem thông tin chi tiết các khách hàng trong hệ thống"
+        breadcrumbs={breadcrumbs}
+      >
+        <AdminButton variant="primary" className="gap-2">
           <span className="material-symbols-outlined text-[20px]">person_add</span>
           Thêm khách hàng
-        </button>
-      </div>
+        </AdminButton>
+      </AdminPageHeader>
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-card_gap mb-8">
-        <div className="bg-surface-container-lowest p-6 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-outline-variant/20">
-          <div className="flex justify-between items-start mb-4">
-            <div className="p-2 bg-primary-container rounded-lg text-on-primary-container">
-              <span className="material-symbols-outlined">group</span>
-            </div>
-            <span className="text-teal-600 bg-teal-50 text-[11px] font-bold px-2 py-0.5 rounded-full">+12%</span>
-          </div>
-          <p className="text-on-surface-variant font-label-caps mb-1">TỔNG KHÁCH HÀNG</p>
-          <h3 className="font-display-lg text-display-lg text-on-surface">2,481</h3>
-        </div>
-
-        <div className="bg-surface-container-lowest p-6 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-outline-variant/20">
-          <div className="flex justify-between items-start mb-4">
-            <div className="p-2 bg-secondary-container rounded-lg text-on-secondary-container">
-              <span className="material-symbols-outlined">person_pin</span>
-            </div>
-            <span className="text-teal-600 bg-teal-50 text-[11px] font-bold px-2 py-0.5 rounded-full">+5.4%</span>
-          </div>
-          <p className="text-on-surface-variant font-label-caps mb-1">KHÁCH HÀNG MỚI</p>
-          <h3 className="font-display-lg text-display-lg text-on-surface">142</h3>
-        </div>
-
-        <div className="bg-surface-container-lowest p-6 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-outline-variant/20">
-          <div className="flex justify-between items-start mb-4">
-            <div className="p-2 bg-tertiary-container rounded-lg text-on-tertiary-container">
-              <span className="material-symbols-outlined">loyalty</span>
-            </div>
-            <span className="text-on-surface-variant bg-surface-container-high text-[11px] font-bold px-2 py-0.5 rounded-full">Ổn định</span>
-          </div>
-          <p className="text-on-surface-variant font-label-caps mb-1">TỶ LỆ QUAY LẠI</p>
-          <h3 className="font-display-lg text-display-lg text-on-surface">64.2%</h3>
-        </div>
-
-        <div className="bg-surface-container-lowest p-6 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-outline-variant/20">
-          <div className="flex justify-between items-start mb-4">
-            <div className="p-2 bg-error-container rounded-lg text-on-error-container">
-              <span className="material-symbols-outlined">star</span>
-            </div>
-            <span className="text-primary font-bold text-[11px] px-2 py-0.5">VIP</span>
-          </div>
-          <p className="text-on-surface-variant font-label-caps mb-1">KHÁCH HÀNG THÂN THIẾT</p>
-          <h3 className="font-display-lg text-display-lg text-on-surface">329</h3>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <AdminKPICard
+          title="Tổng khách hàng"
+          value="2,481"
+          icon="group"
+          trend="+12%"
+          trendVariant="success"
+          progress={70}
+          color="sky"
+        />
+        <AdminKPICard
+          title="Khách hàng mới"
+          value="142"
+          icon="person_pin"
+          trend="+5.4%"
+          trendVariant="success"
+          progress={40}
+          color="pink"
+        />
+        <AdminKPICard
+          title="Tỷ lệ quay lại"
+          value="64.2%"
+          icon="loyalty"
+          trend="Ổn định"
+          trendVariant="neutral"
+          progress={64}
+          color="emerald"
+        />
+        <AdminKPICard
+          title="Khách hàng thân thiết"
+          value="329"
+          icon="star"
+          trend="VIP"
+          trendVariant="primary"
+          progress={85}
+          color="sky"
+        />
       </div>
 
       {/* Customer Data Table Container */}
-      <div className="bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] overflow-hidden">
-        <div className="p-6 border-b border-outline-variant flex justify-between items-center">
-          <h4 className="font-title-sm text-on-surface">Danh sách chi tiết</h4>
-          <div className="flex items-center gap-3">
-            <button className="flex items-center gap-1.5 px-3 py-1.5 border border-outline-variant rounded-lg text-body-sm hover:bg-surface-container-low transition-colors">
+      <AdminCard className="!p-0 overflow-hidden">
+        <div className="p-6 border-b border-slate-100 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <h4 className="text-base font-semibold text-slate-800 font-display">Danh sách chi tiết</h4>
+          <div className="flex items-center gap-2 w-full sm:w-auto">
+            <div className="flex-1 sm:flex-initial min-w-[200px]">
+              <AdminInput
+                placeholder="Tìm kiếm khách hàng..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+            <AdminButton variant="outline" className="gap-2 text-xs">
               <span className="material-symbols-outlined text-[18px]">filter_list</span>
               Bộ lọc
-            </button>
-            <button className="flex items-center gap-1.5 px-3 py-1.5 border border-outline-variant rounded-lg text-body-sm hover:bg-surface-container-low transition-colors">
+            </AdminButton>
+            <AdminButton variant="outline" className="gap-2 text-xs">
               <span className="material-symbols-outlined text-[18px]">download</span>
               Xuất Excel
-            </button>
+            </AdminButton>
           </div>
         </div>
 
-        {/* Search Bar */}
-        <div className="p-4 border-b border-outline-variant">
-          <div className="relative max-w-md">
-            <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
-            <input
-              className="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-body-sm focus:ring-2 focus:ring-primary"
-              placeholder="Tìm kiếm khách hàng..."
-              type="text"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-        </div>
-
-        <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse">
-            <thead className="bg-surface-container-low">
-              <tr>
-                <th className="px-6 py-4 font-label-caps text-on-surface-variant border-b border-outline-variant">KHÁCH HÀNG</th>
-                <th className="px-6 py-4 font-label-caps text-on-surface-variant border-b border-outline-variant">SỐ ĐIỆN THOẠI</th>
-                <th className="px-6 py-4 font-label-caps text-on-surface-variant border-b border-outline-variant">EMAIL</th>
-                <th className="px-6 py-4 font-label-caps text-on-surface-variant border-b border-outline-variant text-center">ĐƠN HÀNG</th>
-                <th className="px-6 py-4 font-label-caps text-on-surface-variant border-b border-outline-variant text-right">TỔNG CHI TIÊU</th>
-                <th className="px-6 py-4 font-label-caps text-on-surface-variant border-b border-outline-variant">NGÀY ĐĂNG KÝ</th>
-                <th className="px-6 py-4 font-label-caps text-on-surface-variant border-b border-outline-variant text-center">THAO TÁC</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-outline-variant">
-              {currentCustomers.map((customer) => (
-                <tr
-                  key={customer.id}
-                  className="hover:bg-surface-container-lowest transition-colors group"
-                  onMouseEnter={() => setHoveredRow(customer.id)}
-                  onMouseLeave={() => setHoveredRow(null)}
-                >
-                  <td className="px-6 py-4">
-                    <div className="flex items-center gap-3">
-                      <img
-                        className="w-10 h-10 rounded-full object-cover"
-                        src={customer.avatar}
-                        alt={customer.name}
-                      />
-                      <span className="font-body-md font-semibold text-on-surface">{customer.name}</span>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 text-body-sm text-on-surface-variant">{customer.phone}</td>
-                  <td className="px-6 py-4 text-body-sm text-on-surface-variant">{customer.email}</td>
-                  <td className="px-6 py-4 text-center font-data-tabular">{customer.orders}</td>
-                  <td className="px-6 py-4 text-right font-data-tabular font-bold text-primary">{formatPrice(customer.totalSpent)}</td>
-                  <td className="px-6 py-4 text-body-sm text-on-surface-variant">{formatDate(customer.joinDate)}</td>
-                  <td className="px-6 py-4">
-                    <div className="flex justify-center gap-2">
-                      <button className="p-1.5 hover:bg-primary-container hover:text-on-primary-container rounded-lg transition-colors text-on-surface-variant">
-                        <span className="material-symbols-outlined text-[20px]">visibility</span>
-                      </button>
-                      <button className="p-1.5 hover:bg-primary-container hover:text-on-primary-container rounded-lg transition-colors text-on-surface-variant">
-                        <span className="material-symbols-outlined text-[20px]">edit</span>
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <AdminTable headers={tableHeaders}>
+          {currentCustomers.map((customer) => (
+            <AdminTableRow
+              key={customer.id}
+              onMouseEnter={() => setHoveredRow(customer.id)}
+              onMouseLeave={() => setHoveredRow(null)}
+            >
+              <AdminTableCell>
+                <div className="flex items-center gap-3">
+                  <img
+                    className="w-10 h-10 rounded-full object-cover border border-slate-100 shadow-sm"
+                    src={customer.avatar}
+                    alt={customer.name}
+                  />
+                  <span className="font-bold text-slate-800">{customer.name}</span>
+                </div>
+              </AdminTableCell>
+              <AdminTableCell className="text-slate-500 font-semibold">{customer.phone}</AdminTableCell>
+              <AdminTableCell className="text-slate-500 font-semibold">{customer.email}</AdminTableCell>
+              <AdminTableCell align="center" className="font-bold text-slate-800">{customer.orders}</AdminTableCell>
+              <AdminTableCell align="right" className="font-bold text-sky-500">{formatPrice(customer.totalSpent)}</AdminTableCell>
+              <AdminTableCell className="text-slate-500 font-semibold">{formatDate(customer.joinDate)}</AdminTableCell>
+              <AdminTableCell align="center">
+                <div className={`flex justify-center gap-1 transition-opacity duration-200 ${hoveredRow === customer.id ? 'opacity-100' : 'opacity-100 sm:opacity-0'}`}>
+                  <button className="p-1.5 hover:bg-sky-50 text-slate-400 hover:text-sky-500 rounded-xl transition-all flex items-center justify-center">
+                    <span className="material-symbols-outlined text-[20px]">visibility</span>
+                  </button>
+                  <button className="p-1.5 hover:bg-sky-50 text-slate-400 hover:text-sky-500 rounded-xl transition-all flex items-center justify-center">
+                    <span className="material-symbols-outlined text-[20px]">edit</span>
+                  </button>
+                </div>
+              </AdminTableCell>
+            </AdminTableRow>
+          ))}
+        </AdminTable>
 
         {/* Pagination */}
-        <div className="px-6 py-4 border-t border-outline-variant flex justify-between items-center bg-surface-container-low">
-          <p className="text-body-sm text-on-surface-variant">
-            Hiển thị {startIndex + 1} - {Math.min(endIndex, filteredCustomers.length)} của {filteredCustomers.length} khách hàng
-          </p>
-          <div className="flex items-center gap-1">
-            <button
-              className="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-colors disabled:opacity-30"
-              disabled={currentPage === 1}
-              onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
-            >
-              <span className="material-symbols-outlined">chevron_left</span>
-            </button>
-            {[1, 2, 3].map(page => (
-              <button
-                key={page}
-                className={`w-8 h-8 flex items-center justify-center rounded-lg text-body-sm font-bold transition-colors ${
-                  currentPage === page
-                    ? 'bg-primary text-on-primary'
-                    : 'text-on-surface-variant hover:bg-surface-container-low'
-                }`}
-                onClick={() => setCurrentPage(page)}
-              >
-                {page}
-              </button>
-            ))}
-            {totalPages > 3 && <span className="px-1 text-on-surface-variant">...</span>}
-            {totalPages > 3 && (
-              <button
-                className="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low rounded-lg text-body-sm transition-colors"
-                onClick={() => setCurrentPage(totalPages)}
-              >
-                {totalPages}
-              </button>
-            )}
-            <button
-              className="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-colors disabled:opacity-30"
-              disabled={currentPage === totalPages}
-              onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
-            >
-              <span className="material-symbols-outlined">chevron_right</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Footer */}
-      <footer className="p-container_padding text-center text-on-surface-variant text-body-sm border-t border-outline-variant bg-surface-container-lowest mt-8">
-        © 2024 KidsFashion Retail Management System. Tất cả quyền được bảo lưu.
-      </footer>
+        <AdminPagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+          startIndex={startIndex}
+          endIndex={endIndex}
+          totalItems={filteredCustomers.length}
+          itemName="khách hàng"
+        />
+      </AdminCard>
     </div>
   );
 }
-

@@ -10,7 +10,7 @@ const PRODUCT_DATABASE = {
     id: 'vay-hoa-nhi-organic',
     name: 'Váy Hoa Nhí Organic',
     price: 1250000,
-    subtitle: 'Stitch Kids Collection',
+    subtitle: 'KỶ NGUYÊN KID Collection',
     description:
       'Chiếc váy mùa hè từ cotton hữu cơ mềm mịn, họa tiết hoa nhí terracotta dịu mắt và phom dáng thoáng nhẹ để bé tự do chuyển động cả ngày.',
     image: `${STITCH_ASSET_PATH}/dress-main.jpg`,
@@ -43,7 +43,7 @@ const PRODUCT_DATABASE = {
     id: 'set-ao-thun-quan-linen',
     name: 'Set Áo Thun & Quần Linen',
     price: 950000,
-    subtitle: 'STITCH Atelier',
+    subtitle: 'KỶ NGUYÊN KID Atelier',
     description:
       'A comfortable and sustainable outfit for boys. The t-shirt is made from 100% organic cotton, paired with breathable linen shorts. Earthy tones and soft natural fabrics ensure comfort for sensitive skin.',
     image: 'https://lh3.googleusercontent.com/aida/AP1WRLszNhGB1m8ZVVqQKMPkFZMnGAo4s43gUSm-Io-6jxZIuAcVlxlLKZOL2f2mjm_S0ke6fOg2DSW17h4VnYLhbJCZLTKSS0tXV-4TcpW5bQDl82BjMrfbNeWFv8Y0h6_S1yJ50LRAvXd9ECKJz50nxCUrDXksnSmhP2q-PlNRuCx-AyImpIXVAeH002eCDkRJ6XTyZX0oCurInUvEjdhiXdwR9G9qxF2RqBaNKV0S10MIVJQuR8AbFcJfiU19',
@@ -73,7 +73,7 @@ const PRODUCT_DATABASE = {
     details: [
       {
         title: 'Craftsmanship',
-        content: 'Mỗi sản phẩm Stitch được hoàn thiện thủ công bởi những nghệ nhân lành nghề, chú trọng đến từng đường kim mũi chỉ để đảm bảo độ bền tối ưu cho sự hiếu động của trẻ nhỏ.'
+        content: 'Mỗi sản phẩm KỶ NGUYÊN KID được hoàn thiện thủ công bởi những nghệ nhân lành nghề, chú trọng đến từng đường kim mũi chỉ để đảm bảo độ bền tối ưu cho sự hiếu động của trẻ nhỏ.'
       },
       {
         title: 'Material (Organic Cotton & Linen)',
@@ -418,7 +418,7 @@ export function ProductDetailPage() {
               {product.showcase?.title || "Êm dịu cho bé, tử tế với từng thớ vải."}
             </h2>
             <p className="font-body-lg text-body-lg leading-relaxed text-on-surface-variant">
-              {product.showcase?.desc || "Tại Stitch, trang phục trẻ em không chỉ là thời trang, mà là sự tôn trọng đối với sự phát triển tự nhiên của bé. Váy Hoa Nhí Organic được dệt từ sợi bông hữu cơ thu hoạch thủ công, giúp vải giữ được độ mềm mịn và khả năng thoáng khí vượt trội."}
+              {product.showcase?.desc || "Tại KỶ NGUYÊN KID, trang phục trẻ em không chỉ là thời trang, mà là sự tôn trọng đối với sự phát triển tự nhiên của bé. Váy Hoa Nhí Organic được dệt từ sợi bông hữu cơ thu hoạch thủ công, giúp vải giữ được độ mềm mịn và khả năng thoáng khí vượt trội."}
             </p>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
               {product.showcase?.features ? (
@@ -456,7 +456,7 @@ export function ProductDetailPage() {
         <div className="mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div className="space-y-2">
             <h2 className="font-headline-lg text-headline-lg">Có thể bé sẽ thích</h2>
-            <p className="text-on-surface-variant">Những thiết kế cùng tinh thần tự nhiên từ Stitch Kids.</p>
+            <p className="text-on-surface-variant">Những thiết kế cùng tinh thần tự nhiên từ KỶ NGUYÊN KID.</p>
           </div>
           <Link to="/products" className="font-label-uppercase text-label-uppercase font-semibold text-primary hover:underline">
             Xem tất cả

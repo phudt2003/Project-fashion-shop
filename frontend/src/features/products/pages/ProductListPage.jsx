@@ -88,8 +88,8 @@ export function ProductListPage() {
         </h1>
         <p className="font-body text-base leading-loose text-[var(--color-text-secondary)] max-w-2xl mx-auto">
           {isSalePage
-            ? 'Tại Stitch, chúng tôi tin rằng thời trang cao cấp cho trẻ em không nên gây tổn hại đến hành tinh. Các chương trình ưu đãi của chúng tôi giúp những sản phẩm làm từ sợi hữu cơ và vật liệu tái chế trở nên dễ dàng tiếp cận hơn.'
-            : 'Khám phá bộ sưu tập thời trang trẻ em bền vững của Stitch, được làm từ sợi hữu cơ và vật liệu tái chế.'}
+            ? 'Tại KỶ NGUYÊN KID, chúng tôi tin rằng thời trang cao cấp cho trẻ em không nên gây tổn hại đến hành tinh. Các chương trình ưu đãi của chúng tôi giúp những sản phẩm làm từ sợi hữu cơ và vật liệu tái chế trở nên dễ dàng tiếp cận hơn.'
+            : 'Khám phá bộ sưu tập thời trang trẻ em bền vững của KỶ NGUYÊN KID, được làm từ sợi hữu cơ và vật liệu tái chế.'}
         </p>
       </section>
 

@@ -15,6 +15,7 @@ import { userRoutes } from '../modules/users/user.routes.js';
 import { wishlistRoutes } from '../modules/wishlists/wishlist.routes.js';
 
 import { adminRoutes } from './admin.routes.js';
+import { testRoutes } from './test.routes.js';
 
 export const router = Router();
 
@@ -34,4 +35,5 @@ router.use('/analytics', analyticsRoutes);
 router.use('/webhooks', webhookRoutes);
 
 router.use('/admin', adminRoutes);
+router.use('/test', testRoutes);
 

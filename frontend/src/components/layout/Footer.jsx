@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="mt-auto w-full border-t border-[var(--color-border)] bg-[linear-gradient(135deg,var(--color-primary-soft),#FFFFFF_45%,var(--color-secondary-soft))] pt-12 pb-6">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 md:grid-cols-12 md:px-6">
         <div className="md:col-span-4">
-          <h2 className="mb-4 font-display text-[var(--text-2xl)] font-extrabold text-primary">STITCH Kids</h2>
+          <h2 className="mb-4 font-display text-[var(--text-2xl)] font-extrabold text-primary">KỶ NGUYÊN KID</h2>
           <p className="mb-6 max-w-xs text-base leading-relaxed text-[var(--color-text-secondary)]">
             Trang phục trẻ em mềm mại, an toàn và đủ đáng yêu cho những ngày bé tự do khám phá.
           </p>
@@ -27,7 +27,7 @@ export function Footer() {
           <Link className="block text-sm font-semibold text-[var(--color-text-secondary)] transition-all hover:translate-x-1 hover:text-primary" to="/products">Tất cả sản phẩm</Link>
           <Link className="block text-sm font-semibold text-[var(--color-text-secondary)] transition-all hover:translate-x-1 hover:text-primary" to="/categories/do-be-trai">Bé trai</Link>
           <Link className="block text-sm font-semibold text-[var(--color-text-secondary)] transition-all hover:translate-x-1 hover:text-primary" to="/categories/do-be-gai">Bé gái</Link>
-          <Link className="block text-sm font-semibold text-[var(--color-text-secondary)] transition-all hover:translate-x-1 hover:text-primary" to="/categories/footwear">Giày dép</Link>
+          <Link className="block text-sm font-semibold text-[var(--color-text-secondary)] transition-all hover:translate-x-1 hover:text-primary" to="/categories/giay-dep">Giày dép</Link>
         </div>
         
         <div className="space-y-3 md:col-span-3">
@@ -56,7 +56,7 @@ export function Footer() {
       </div>
       
       <div className="mx-auto mt-10 flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-[var(--color-border)] px-4 pt-6 text-center md:flex-row md:px-6">
-        <span className="text-sm font-semibold text-[var(--color-text-muted)]">© 2026 STITCH Kids. Bảo lưu mọi quyền.</span>
+        <span className="text-sm font-semibold text-[var(--color-text-muted)]">© 2026 KỶ NGUYÊN KID. Bảo lưu mọi quyền.</span>
         <div className="flex flex-wrap justify-center gap-4">
           <a className="text-sm font-semibold text-[var(--color-text-muted)] transition-colors hover:text-primary" href="#">Báo cáo bền vững</a>
           <a className="text-sm font-semibold text-[var(--color-text-muted)] transition-colors hover:text-primary" href="#">Chăm sóc sản phẩm</a>

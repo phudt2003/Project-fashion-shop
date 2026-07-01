@@ -3,8 +3,10 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { CustomerLayout } from '../layouts/CustomerLayout';
 import { AuthLayout } from '../layouts/AuthLayout';
 import { HomePage } from '../pages/HomePage';
+import { NewbornPage } from '../pages/NewbornPage';
 import { ProductListPage } from '../features/products/pages/ProductListPage';
 import { ProductDetailPage } from '../features/products/pages/ProductDetailPage';
+import { NewbornProductDetailPage } from '../features/products/pages/NewbornProductDetailPage';
 import { SalePage } from '../features/products/pages/SalePage';
 import { CategoryPage } from '../features/categories/pages/CategoryPage';
 import { SearchPage } from '../features/products/pages/SearchPage';
@@ -52,8 +54,11 @@ export function AppRoutes() {
       {/* Customer / Shop Routes */}
       <Route element={<CustomerLayout />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/categories/so-sinh" element={<NewbornPage />} />
+        <Route path="/khuyen-mai" element={<SalePage />} />
         <Route path="/products" element={<ProductListPage />} />
         <Route path="/products/:slug" element={<ProductDetailPage />} />
+        <Route path="/newborn-products/:slug" element={<NewbornProductDetailPage />} />
         <Route path="/sale" element={<SalePage />} />
         <Route path="/categories/:slug" element={<CategoryPage />} />
         <Route path="/search" element={<SearchPage />} />
@@ -68,8 +73,8 @@ export function AppRoutes() {
           <Route path="/payment/:orderId" element={<PaymentPage />} />
           <Route path="/payment/success" element={<PaymentSuccessPage />} />
           <Route path="/payment/failed" element={<PaymentFailedPage />} />
-          <Route path="/orders" element={<OrderHistoryPage />} />
-          <Route path="/orders/:orderId" element={<OrderDetailPage />} />
+          <Route path="/don-hang" element={<OrderHistoryPage />} />
+          <Route path="/don-hang/:orderId" element={<OrderDetailPage />} />
           {/* Also protect /dashboard as requested */}
           <Route path="/dashboard" element={<Navigate to="/admin" replace />} />
         </Route>

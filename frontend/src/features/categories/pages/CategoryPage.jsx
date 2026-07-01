@@ -7,7 +7,7 @@ const ALL_MOCK_PRODUCTS = [
     id: 'sandal-da-thu-cong',
     name: 'Sandal Da Thủ Công',
     price: 2450000,
-    category: 'footwear',
+    category: 'giay-dep',
     description: 'Da thuộc thực vật, Đế cao su tự nhiên',
     badge: 'Thủ công',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCT-6TsUDibpY2TVxpnXsKVMIIBGbvZvaDf5R4RS286uz1Vb0BcjdpetV3WFJZTbLH4kB3T1eOMRhz4NRfxv0bLn1hY9_kmx7QQFM0W7aRNM-VQ1vaXE6Xrcg9kxNrQzdmHjVnSSm6usDz2rMDMzKZ9kh995K7gd3vz9mu_mrko4n37e85zK7oB70PsglgEiQBcQldKP_52yc1Xkc0O0HyLDjlYIIWlIIK9e9jbJiZLydclRegh23PYE7670x9RE44AZNvdqXp8dk9r',
@@ -18,7 +18,7 @@ const ALL_MOCK_PRODUCTS = [
     id: 'loafers-da-cao-cap',
     name: 'Loafers Da Cao Cấp',
     price: 3850000,
-    category: 'footwear',
+    category: 'giay-dep',
     description: 'Da bò Ý, Lót đệm thoáng khí',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCeTktd3lImP1Pkv3-wGkWQZ5N97TGxADtU4zXkHD3L6CKJfJI_I64rLcOF7vHovE_SjIJrqEHb1E521EDixaxp9zbX8jlacwwZYbbMMPpsNcRXQRcLzhkEzEyYKblG2Y5LaRFGtbCOMS-YD8d0r1FXU08NqH846gfS0t6Cbiy8h64nGFXTBMacyeK2de_0aNZoSKSb6iQeQ8tfEOvEuO8-W0KGmZav66G7l_GGg3AuPP8lAocWhkcEpt6-pNvpVv2MiyAP8WWMq2mM',
     sizes: ['38', '39', '40', '41', '42'],
@@ -28,7 +28,7 @@ const ALL_MOCK_PRODUCTS = [
     id: 'giay-sneaker-canvas',
     name: 'Giày Sneaker Canvas',
     price: 1950000,
-    category: 'footwear',
+    category: 'giay-dep',
     description: 'Vải lanh hữu cơ, Đế bần tái chế',
     badge: 'Bán chạy',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAn_QXJPzqmLHfjVjt1xCXCB2RGRBKhUUqNqXppmAqUWgIQ51fXVdM3Xg0gH230Y9sco4VkPXzQ6mFkmFrArHGPSPHHpLRJmPgO0UOqp4s-v1IJpyzUETl23prvtzhF-hG02UiEEtBPu9I0eultse-NPT69G3c4XybdGQIwSMRiPX-cnj0vPE2LLqXJ81BPrGCRChv0o7DKQj2evQ5xyYb58n-MLdA7W-rug5GjyrcjK9fEJdmiF5x_Nl1Ld1hlLXdiJ6GbQTBZWTp0',
@@ -39,9 +39,9 @@ const ALL_MOCK_PRODUCTS = [
     id: 'mules-da-thanh-lich',
     name: 'Mules Da Thanh Lịch',
     price: 2650000,
-    category: 'footwear',
+    category: 'giay-dep',
     description: 'Da mềm Pastel, Gót gỗ tự nhiên',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDd59E5_JFycovvDrPO6inKDNIfYcPqpCNON-yH1ieSt1CFQC9iAIEL166gdAPUcoX1XxWZsQIblJlrsdBduSEZzhgcSpCRw5ugFZao_WVULdibE9SxZCx2ThtLF8V4CGrmLBwhnQLwg9gRScn_kSnL9XnHIxILD4EG5Jkf14RaAiX3cIR6Qv781jfMSA7tar36BQ7LbYzmohHr-1ve-DAwi0nuH31RIMhiNfLMJ6q4DaHmL_atvAejP2nKbSe2M5odCmPEZbdMO-iQ',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDd59E5_JFycovvDrPO6inKDNIfYcPqpCNON-yH1ieSt1CFQC9iAIEL166gdAPUcoX1XxWZsQIblJlrsdBduSEZzhgcSpCRw5ugFZao_WVULdibE9SxZCx2ThtLF8V4CGrmLBwhnQLwg9gRScn_kSnL9XnHIxILD4EG5Jkf14RaAiX3cIR6Qv781jfMSA7tar36BQ7LbYzmohHr-1ve-DAwi0nuH31RIMhiNfLMJ6q4DaHmL_atvAejP2nKbSeM5odCmPEZbdMO-iQ',
     sizes: ['36', '37', '38', '39'],
     colors: ['#DCFCE7', '#FFFFFF'],
   },
@@ -282,7 +282,7 @@ export function CategoryPage() {
   // Determine Title & Description based on slug
   let pageTitle = 'Bộ sưu tập Giày dép';
   let pageDesc = 'Sự giao thoa giữa nghệ thuật chế tác thủ công và ý thức bảo vệ môi trường. Những đôi giày được tạo nên từ vật liệu bền vững, mang lại sự êm ái tối đa trong từng bước chân.';
-  let activeCategory = 'footwear';
+  let activeCategory = 'giay-dep';
 
   if (slug === 'nam') {
     pageTitle = 'Thời Trang Nam';
@@ -383,7 +383,7 @@ export function CategoryPage() {
   return (
     <div className="w-full flex flex-col">
       {/* Hero Header */}
-      <section className="w-full border-b border-border-subtle bg-[linear-gradient(135deg,var(--color-primary-soft),#FFFFFF_45%,var(--color-secondary-soft))]">
+      <section className="w-full border-b border-border-subtle bg-[var(--color-bg-base)]">
         <div className="max-w-[1440px] mx-auto w-full px-8 md:px-16 py-12 md:py-16">
           <nav className="flex flex-wrap items-center gap-2 mb-4 font-label-uppercase text-label-uppercase text-ink-light">
             <Link className="hover:text-primary transition-colors" to="/">
@@ -400,7 +400,7 @@ export function CategoryPage() {
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_360px] gap-8 items-end">
             <div>
               <p className="font-label-uppercase text-label-uppercase text-primary mb-3">
-                {isGirlsCategory ? 'Chất liệu dịu da cho bé' : 'STITCH Atelier'}
+                {isGirlsCategory ? 'Chất liệu dịu da cho bé' : 'KỶ NGUYÊN KID Atelier'}
               </p>
               <h1 className="font-display text-headline-lg md:text-display-mobile text-on-surface mb-element-gap-md">
                 {pageTitle}
@@ -669,7 +669,7 @@ export function CategoryPage() {
       <section className="bg-[linear-gradient(135deg,var(--color-secondary-soft),var(--color-primary-soft))] py-section-gap-desktop w-full border-t border-border-subtle mt-12">
         <div className="max-w-[1440px] mx-auto px-8 md:px-16 flex flex-col md:flex-row items-center justify-between gap-element-gap-lg">
           <div className="max-w-xl">
-            <h2 className="font-display text-headline-lg text-primary mb-4">Kết nối cùng Stitch</h2>
+            <h2 className="font-display text-headline-lg text-primary mb-4">Kết nối cùng KỶ NGUYÊN KID</h2>
             <p className="font-body-md text-body-md text-ink-light">
               Nhận thông tin sớm nhất về các bộ sưu tập mới và các câu chuyện về thời trang bền vững của chúng tôi.
             </p>

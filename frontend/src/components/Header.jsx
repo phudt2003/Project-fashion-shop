@@ -62,9 +62,10 @@ export function Header() {
   const navLinks = [
     { label: 'Bé trai', path: '/categories/do-be-trai' },
     { label: 'Bé gái', path: '/categories/do-be-gai' },
-    { label: 'Giày dép', path: '/categories/footwear' },
-    { label: 'Khuyến mãi', path: '/products?sale=true' },
-    { label: 'Đơn hàng', path: '/orders' },
+    { label: 'Sơ sinh', path: '/categories/so-sinh' },
+    { label: 'Giày dép', path: '/categories/giay-dep' },
+    { label: 'Khuyến mãi', path: '/khuyen-mai' },
+    { label: 'Đơn hàng', path: '/don-hang' },
   ];
 
   return (
@@ -73,7 +74,7 @@ export function Header() {
         {/* Brand Logo */}
         <div className="flex justify-start">
           <Link to="/" className="font-display text-[var(--text-xl)] font-extrabold text-primary">
-            STITCH Kids
+            KỶ NGUYÊN KID
           </Link>
         </div>
         

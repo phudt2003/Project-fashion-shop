@@ -1,8 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-const heroImage =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuD-9xPP3TJ4Mpid9ohgnjmPqBsz3D7awIJ-Vx-LhVpKSibhh5f8u8jV_9tnai80p_L6s-lVk_y6OIYv9zOhcmw7MR0Sz-rjmeqXAriUlayqe2AyHW-EhEA0gGFUEnoZEfgbUBx19gbWQ-U-5iQsiZUZxaWzCQwJHLbI-vqhyIUTkuLQt-JKWWwOXH7stp3KkpiKJaNd44fFPPWZYFKAhNEnZOegeOFS7pmZRemeWemJQFsA1_9WYI2DsHvU40yxz3fPXnrc1wzajTyO';
+const heroImages = [
+  '/images/hero.png',
+  '/images/hero2.png',
+  '/images/hero3.png'
+];
 
 const saleProducts = [
   {
@@ -37,7 +40,7 @@ const saleProducts = [
     price: 580000,
     originalPrice: 780000,
     badge: '-25%',
-    to: '/categories/footwear',
+    to: '/categories/giay-dep',
     image:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuAn_QXJPzqmLHfjVjt1xCXCB2RGRBKhUUqNqXppmAqUWgIQ51fXVdM3Xg0gH230Y9sco4VkPXzQ6mFkmFrArHGPSPHHpLRJmPgO0UOqp4s-v1IJpyzUETl23prvtzhF-hG02UiEEtBPu9I0eultse-NPT69G3c4XybdGQIwSMRiPX-cnj0vPE2LLqXJ81BPrGCRChv0o7DKQj2evQ5xyYb58n-MLdA7W-rug5GjyrcjK9fEJdmiF5x_Nl1Ld1hlLXdiJ6GbQTBZWTp0',
   },
@@ -50,14 +53,14 @@ const bestSellers = [
     badge: 'Bán chạy',
     to: '/categories/do-be-trai',
     image:
-      'https://images.unsplash.com/photo-1516627145492-a7f7871c2a2b?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80',
   },
   {
     name: 'Set chân váy dusty rose',
     price: 1150000,
     to: '/categories/do-be-gai',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAj5p1wHBC-swQfLiW7If5JsJ6XDKajAFHQbEc4eN2peXIWdTbx6FBJNKRkBogrgOkr7uCzu4CA2HD0INNTpr2hspuNzG8Mozpwck4Twmy3XsxYRUF4F6dO0b1FbdfJEQQjo0QBg0ZzAkFLpfgSRFxGi3NLEYuED-AWXMwOKTO_UJzedB-JWSA3yfn04tCsmymbrKgeyqrS_Ev2SskX2zt9zWIVPECd71-H32J0eWMcpRIn_2WGPIh-SzS2w8PrCZb3r-NCABxYMnpo',
+      'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80',
   },
   {
     name: 'Áo thun bé trai organic',
@@ -84,7 +87,7 @@ const categoryTiles = [
     to: '/categories/do-be-gai',
     className: 'md:col-span-7 md:row-span-2 h-[390px] md:h-auto',
     image:
-      'https://lh3.googleusercontent.com/aida/AP1WRLurJ2RXLlMhl5O8PMmXLMfFZNPJbaeO7fvXs_lIaBYWsrgdxmwL6Ck8MNZnXe1rGWK0VjtD-DCTS4SsEL2uQXbLWYLSQnxxDSMtoq5FQ1xGpiFBkPWj3ewPQgpAWZ9J127WNAF80miTTuckQ2TPftJH_1rvqKEfSNpoHf37pLW_T3IYJOsbNwUDzUIgr0oY-kkOMx-l-vhG9Hg4kHNqrWTa22p4eTKORqdpYd0iqCP1gHfMyrTj-QyEkGmq',
+      '/images/begai.jpg',
   },
   {
     title: 'Bé trai',
@@ -92,12 +95,12 @@ const categoryTiles = [
     to: '/categories/do-be-trai',
     className: 'md:col-span-5 h-[280px] md:h-auto',
     image:
-      'https://lh3.googleusercontent.com/aida/AP1WRLsAnzGEcQ3ZFXy1duQLsIt8iqtri0mhjm6bPYEQJhSs3Oco-4BXfsJTr_prc7u9tWDDwCYSxbU1dVazORAjYXewTaOIAwOd-v9RmDcr4KI5wHQ4fEk2kxQTO_9NqIs5BWpOSaDk4VsE6obFP7zg7FqKJaaoiciVixc9g5TalvXjI_jMohJXdo00Tp3CxnmCmXvN9SAw0sxvZnauuXMeG3cMQG1hU9SPJQ32Wwofnpe_MKywdD20cx8RfgoS',
+      '/images/betrai.png',
   },
   {
     title: 'Sơ sinh',
     label: 'Mềm mại',
-    to: '/products?category=newborn',
+    to: '/categories/so-sinh',
     className: 'md:col-span-2 h-[220px] md:h-auto',
     image:
       'https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=900&q=80',
@@ -105,10 +108,10 @@ const categoryTiles = [
   {
     title: 'Giày dép',
     label: 'Êm từng bước',
-    to: '/categories/footwear',
+    to: '/categories/giay-dep',
     className: 'md:col-span-3 h-[220px] md:h-auto',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAn_QXJPzqmLHfjVjt1xCXCB2RGRBKhUUqNqXppmAqUWgIQ51fXVdM3Xg0gH230Y9sco4VkPXzQ6mFkmFrArHGPSPHHpLRJmPgO0UOqp4s-v1IJpyzUETl23prvtzhF-hG02UiEEtBPu9I0eultse-NPT69G3c4XybdGQIwSMRiPX-cnj0vPE2LLqXJ81BPrGCRChv0o7DKQj2evQ5xyYb58n-MLdA7W-rug5GjyrcjK9fEJdmiF5x_Nl1Ld1hlLXdiJ6GbQTBZWTp0',
+      '/images/giay.png',
   },
 ];
 
@@ -175,7 +178,7 @@ function ProductCard({ product }) {
 function SectionHeading({ eyebrow, title, action, to }) {
   return (
     <div className="mb-8 flex flex-col gap-3 text-center sm:mb-10 sm:items-center">
-      <p className="font-body text-sm font-extrabold uppercase text-[var(--color-text-accent)]">{eyebrow}</p>
+      <h1 className="font-body text-lg font-extrabold uppercase text-[var(--color-text-accent)]">{eyebrow}</h1>
       <h2 className="font-display text-[var(--text-2xl)] font-extrabold text-[var(--color-text-primary)] md:text-[var(--text-3xl)]">{title}</h2>
       {action && to && (
         <Link
@@ -194,7 +197,15 @@ export function HomePage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentHeroIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -214,22 +225,26 @@ export function HomePage() {
 
   return (
     <div className="w-full overflow-hidden bg-[var(--color-bg-base)] text-[var(--color-text-primary)]">
-      <section className="relative flex min-h-[560px] items-center overflow-hidden rounded-b-[40px] md:min-h-[620px] lg:min-h-[680px]">
-        <img
-          alt="Trẻ em mặc trang phục organic của STITCH"
-          className="absolute inset-0 h-full w-full object-cover"
-          src={heroImage}
-        />
+      <section className="relative flex min-h-[560px] items-center overflow-hidden md:min-h-[620px] lg:min-h-[680px] pt-[120px] md:pt-[160px] lg:pt-[200px]">
+        {/* Slideshow background layers */}
+        {heroImages.map((src, index) => (
+          <div
+            key={src}
+            className={`absolute inset-0 bg-cover bg-[center_25%] transition-opacity duration-1000 ${
+              index === currentHeroIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+            style={{ backgroundImage: `url(${src})` }}
+          />
+        ))}
+        {/* Gradient overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(37,99,235,0.52),rgba(249,168,212,0.28),rgba(253,230,138,0.12))]" />
+        
+        {/* Content */}
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 md:px-6 py-20 text-[var(--color-text-inverse)]">
           <div className="max-w-3xl">
-            <p className="mb-4 inline-flex rounded-full bg-white/20 px-4 py-2 font-body text-sm font-extrabold uppercase backdrop-blur">STITCH Kids Atelier</p>
-            <h1 className="font-display text-[var(--text-4xl)] font-extrabold leading-tight md:text-[var(--text-5xl)]">
-              STITCH Kids Atelier
-            </h1>
-            <p className="mt-6 max-w-xl font-body text-base leading-loose text-[var(--color-text-inverse)] opacity-90 md:text-lg">
+            <h1 className="max-w-2xl font-display text-[var(--text-2xl)] font-extrabold leading-relaxed text-[var(--color-text-inverse)] md:text-[var(--text-3xl)]">
               Thời trang trẻ em bền vững, mềm mại trên da bé và chỉn chu trong từng đường may cho những ngày tuổi thơ tự do.
-            </p>
+            </h1>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 className="inline-flex min-h-14 items-center justify-center rounded-full bg-primary px-8 py-4 font-display text-base font-extrabold text-on-primary shadow-button transition-all hover:-translate-y-0.5 hover:bg-secondary hover:text-[var(--badge-sale-text)] active:translate-y-0"
@@ -239,7 +254,7 @@ export function HomePage() {
               </Link>
               <Link
                 className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/70 bg-white/15 px-8 py-4 font-display text-base font-extrabold text-white backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white hover:text-primary"
-                to="/products?sale=true"
+                to="/khuyen-mai"
               >
                 Xem ưu đãi
               </Link>
@@ -267,8 +282,9 @@ export function HomePage() {
               ['Tất cả', '/products'],
               ['Bé trai', '/categories/do-be-trai'],
               ['Bé gái', '/categories/do-be-gai'],
-              ['Sơ sinh', '/products?category=newborn'],
-              ['Khuyến mãi', '/products?sale=true'],
+              ['Sơ sinh', '/categories/so-sinh'],
+              ['Giày dép', '/categories/giay-dep'],
+              ['Khuyến mãi', '/khuyen-mai'],
             ].map(([label, to], index) => (
               <Link
                 className={`whitespace-nowrap rounded-full px-5 py-2 font-body text-sm font-medium tracking-wide uppercase transition ${index === 0
@@ -338,14 +354,14 @@ export function HomePage() {
             >
               <img
                 alt={tile.title}
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
                 src={tile.image}
               />
-              <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(37,99,235,0.52),rgba(249,168,212,0.28),rgba(253,230,138,0.12))]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-[var(--color-text-inverse)] md:p-8">
                 <p className="mb-2 font-body text-sm font-medium tracking-wider uppercase text-white/90">{tile.label}</p>
-                <h3 className="font-display text-[var(--text-3xl)] font-extrabold md:text-[var(--text-4xl)]">{tile.title}</h3>
+                <h3 className="font-display text-[var(--text-2xl)] font-extrabold md:text-[var(--text-3xl)]">{tile.title}</h3>
                 {tile.description && (
                   <p className="mt-2 max-w-sm font-body text-sm leading-relaxed text-[var(--color-text-inverse)] opacity-90">{tile.description}</p>
                 )}
@@ -425,12 +441,12 @@ export function HomePage() {
           </div>
         </div>
         <div>
-          <p className="mb-4 font-body text-sm font-extrabold uppercase text-[var(--color-text-accent)]">Về STITCH Kids</p>
+          <h1 className="mb-4 font-body text-lg font-extrabold uppercase text-[var(--color-text-accent)]">Về KỶ NGUYÊN KID</h1>
           <h2 className="font-display text-[var(--text-3xl)] font-extrabold leading-tight text-[var(--color-text-primary)] md:text-[var(--text-4xl)]">
             Vì một tương lai thời trang tử tế cho con
           </h2>
           <p className="mt-6 font-body text-base leading-loose text-[var(--color-text-secondary)]">
-            STITCH Kids ra đời từ mong muốn mang đến trang phục bền, đẹp và an toàn cho trẻ nhỏ. Mỗi chất liệu được chọn để bé thoải mái vận động, còn cha mẹ yên tâm hơn với lựa chọn mỗi ngày.
+            KỶ NGUYÊN KID ra đời từ mong muốn mang đến trang phục bền, đẹp và an toàn cho trẻ nhỏ. Mỗi chất liệu được chọn để bé thoải mái vận động, còn cha mẹ yên tâm hơn với lựa chọn mỗi ngày.
           </p>
           <p className="mt-4 font-body text-base leading-loose text-[var(--color-text-secondary)]">
             Từ cotton organic đến linen thoáng mát, các thiết kế giữ tinh thần tối giản, dễ phối và đủ mềm mại cho làn da nhạy cảm.
@@ -444,7 +460,7 @@ export function HomePage() {
 
       <section className="bg-[var(--color-bg-muted)] py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <SectionHeading eyebrow="Đánh giá" title="Các mẹ nói gì về STITCH Kids" />
+          <SectionHeading eyebrow="Đánh giá" title="Các mẹ nói gì về KỶ NGUYÊN KID" />
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {testimonials.map((testimonial) => (
               <article
@@ -473,7 +489,7 @@ export function HomePage() {
 
       <section className="border-t border-[var(--color-border)] bg-[linear-gradient(135deg,var(--color-secondary-soft),var(--color-primary-soft))] py-12 md:py-16">
         <div className="mx-auto max-w-2xl px-4 md:px-6 text-center">
-          <h2 className="font-display text-[var(--text-3xl)] font-extrabold text-[var(--color-text-primary)]">Kết nối với STITCH</h2>
+          <h2 className="font-display text-[var(--text-3xl)] font-extrabold text-[var(--color-text-primary)]">Kết nối với KỶ NGUYÊN KID</h2>
           <p className="mt-4 font-body text-base leading-relaxed text-[var(--color-text-secondary)]">
             Nhận tin sớm về bộ sưu tập mới, chất liệu an toàn cho bé và ưu đãi đầu mùa.
           </p>
